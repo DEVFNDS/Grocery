@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Grocery/css/main.css">
+  <script src="https://kit.fontawesome.com/c940cf0420.js" crossorigin="anonymous"></script>
+  <title>GetDelivered</title>
+</head>
+
+<body>
+
+  <!-- side bar  -->
+  <div class="sidebar inactive" id="side">
+    <button onclick="toggleSidebar()">X</button>
+    <h4>Personal Cart</h4>
+    <div class="cart-items">
+
+    </div>
+  </div>
+
+  <div class="popup-card">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <img  src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+      <h4>Product Details</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac turpis eget dolor blandit aliquet ut sit amet
+        massa.</p>
+        <button onclick="addToCart(event)" class="card-add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+  <div id="overlay">
+    <div class="main-content">
+      <nav class="navbar">
+        <a class="navbar-brand" href="#">Get Delivered</a>
+        <div class="navbar-search">
+          <input type="text" placeholder="Search for products">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="navbar-delivery">
+          <a href="#"><i class="fas fa-car"></i></a>
+          <span>Delivery to L5R1R1</span>
+        </div>
+        <div class="navbar-cart">
+          <button onclick="showSidebar()"><i class="fas fa-shopping-cart"></i></button>
+          <span class="cart-count">0</span>
+        </div>
+      </nav>
+
+      <h3>Products Near you</h3>
+
+      <div class="products">
+        <div class="card">
+          <img onclick="showPoup()" src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button onclick="addToCart(event)" class="card-add-to-cart">Add to Cart</button>
+            <!-- <button class="btn-details">Details</button> -->
+          </div>
+        </div>
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Apples</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button onclick="addToCart(event)" class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <h3>Fresh Fruits</h3>
+      <div class="products">
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <h3>Fresh Vegetables</h3>
+      <div class="products">
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details">
+            <h4 class="card-title">Sugar Cane</h4>
+            <span class="card-price">$3.99/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <button class="card-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../Grocery/js/script.js"></script>
+
+</body>
+
+</html>
