@@ -7,26 +7,48 @@ function addToCart(event) {
     event.target.parentElement.querySelector(".card-title").textContent;
   var itemvalue = 
   event.target.parentElement.querySelector(".quantity").querySelector("span").textContent;
+  var imageSrc = event.target.parentElement.parentElement.querySelector("img").getAttribute('src');
+  var productId = event.target.parentElement.id;
+  var cartId = "cart-" + productId;
 
-  var cart = document.querySelector(".cart-items");
-  position = cart.children.length + 1;
+  var cart = document.querySelector(".cart-items")
   var cartItem = document.createElement("div");
   cartItem.classList.add("cart-card");
   cartItem.classList.add("cart-item");
-  cartItem.id = position;
+  cartItem.id = cartId;
   cartItem.innerHTML = `
-    <span class="cart-title">${itemtitle}</span>
-    <span> ${itemvalue}</span>
-    <span class="cart-price">${itemprice}</span>
-    <button  onclick="remove(${position})"><i class="fa fa-trash" aria-hidden="true"></i></button>
+    <div class="cart-desc">
+      <div>
+        <div class="cart-quantity"> ${itemvalue}</div>
+        <img class="cart-image" src="${imageSrc}">
+      </div>
+      <div class="cart-detail">
+        <span class="cart-title">${itemtitle}</span>
+        <span class="cart-price">Price: ${itemprice}</span>
+      </div>
+    </div>
+    <button onclick="remove('${cartId}')"><i class="fa fa-trash" aria-hidden="true"></i></button>
   `;
 
   cart.appendChild(cartItem);
+
+  
+  
+  event.target.style.display = "none";
+  event.target.parentElement.querySelector(".quantity span").innerHTML = 1;
+  event.target.parentElement.querySelector(".quantity").style.display = "block";
+  document.getElementById("empty-cart").style.display = "none";
 }
 
-function remove(position) {
+function remove(cartId) {
   var cart = document.querySelector(".cart-items");
-  cart.removeChild(document.getElementById(position));
+  cart.removeChild(document.getElementById(cartId));
+  var productId = cartId.replace("cart-", "");
+  document.getElementById(productId).querySelector(".quantity").style.display = "none";
+  document.getElementById(productId).querySelector(".add-cart").style.display = "block";
+  if(cart.childElementCount === 0) {
+    document.getElementById("empty-cart").style.display = "block";
+  }
 }
 
 function toggleSidebar() {
@@ -72,14 +94,20 @@ products.forEach((product) => {
   const decrementBtn = product.querySelector(".decrement");
   const quantityInput = product.querySelector(".quantity span");
 
-  incrementBtn.addEventListener("click", () => {
+  incrementBtn.addEventListener("click", (e) => {
+    var productID = e.target.parentElement.parentElement.id;
+    document.getElementById("cart-"+ productID).querySelector(".cart-quantity").innerHTML = parseInt(quantityInput.innerHTML) + 1;
     quantityInput.innerHTML = parseInt(quantityInput.innerHTML) + 1;
   });
 
-  decrementBtn.addEventListener("click", () => {
+  decrementBtn.addEventListener("click", (e) => {
     // Make sure the quantity doesn't go below 1
-    if (parseInt(quantityInput.innerHTML) > 0) {
+    var productID = e.target.parentElement.parentElement.id;
+    if (parseInt(quantityInput.innerHTML) > 1) { 
+      document.getElementById("cart-"+ productID).querySelector(".cart-quantity").innerHTML = parseInt(quantityInput.innerHTML) - 1;
       quantityInput.innerHTML = parseInt(quantityInput.innerHTML) - 1;
+    } else {
+      remove("cart-"+ productID);
     }
   });
 });

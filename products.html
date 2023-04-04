@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Grocery/css/main.css">
+  <link rel="stylesheet" href="./css/main.css">
   <script src="https://kit.fontawesome.com/c940cf0420.js" crossorigin="anonymous"></script>
   <title>GetDelivered</title>
 </head>
@@ -14,17 +14,24 @@
 
   <!-- side bar  -->
   <div class="sidebar inactive" id="side">
-    <button onclick="toggleSidebar()">X</button>
-    <h4>Personal Cart</h4>
-    <div class="cart-items">
-
+    <div class="sidebar-container">
+      <div class="sidebar-header">
+        <h3>Personal Cart</h3>
+        <button onclick="toggleSidebar()">X</button>
+      </div>
+      <div class="cart-items">
+        
+      </div>
+      <div id="empty-cart">
+        No items in the cart !!
+      </div>
     </div>
   </div>
 
   <div class="popup-card">
     <div class="popup-content">
       <span class="close">&times;</span>
-      <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+      <img src="./assets/images/sugarcane.png" alt="Grocery Item">
       <h4>Product Details</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac turpis eget dolor blandit aliquet ut sit amet
         massa.</p>
@@ -54,8 +61,8 @@
 
       <div class="products">
         <div class="card">
-          <img onclick="showPoup()" src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
-          <div class="card-details">
+          <img onclick="showPoup()" src="./assets/images/sugarcane.png" alt="Grocery Item">
+          <div class="card-details" id="product-1">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
             <div>
@@ -66,14 +73,15 @@
             </p>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-1">0</span>
+              <span id="quantity-1">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
-            <button onclick="addToCart(event)" class="card-add-to-cart">Add to Cart</button>
+            
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Apples</h4>
             <span class="card-price">$3.99/lb</span>
@@ -92,7 +100,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -111,7 +119,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -133,7 +141,7 @@
       <h3>Fresh Fruits</h3>
       <div class="products">
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -152,7 +160,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -171,7 +179,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -190,7 +198,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -212,7 +220,7 @@
       <h3>Fresh Vegetables</h3>
       <div class="products">
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -231,7 +239,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -250,7 +258,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -269,7 +277,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="../Grocery/assets/images/sugarcane.png" alt="Grocery Item">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Sugar Cane</h4>
             <span class="card-price">$3.99/lb</span>
@@ -291,7 +299,7 @@
     </div>
   </div>
 
-  <script src="../Grocery/js/script.js"></script>
+  <script src="./js/script.js"></script>
 
 </body>
 
