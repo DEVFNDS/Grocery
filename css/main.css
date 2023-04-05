@@ -89,7 +89,7 @@
   }
 
   .popup-card img{
-    width: 80%;
+    width: 50%;
     border-radius: 5px;
     margin-bottom: 10px;
   }
@@ -300,7 +300,8 @@
   margin: 15% auto;
   padding: 20px;
   border-radius: 5px;
-  max-width: 400px;
+  width: 1000px;
+  height: 300px;
   text-align: center;
   position: relative;
 }
@@ -338,3 +339,27 @@
   text-align: center;
   margin-top: 100px;
 }
+
+.pre-des{
+  display: flex;
+  flex-direction: row;
+}
+
+.pre-amount{
+  border: 1px solid rgba(235, 218, 218, 0.603);
+
+}
+
+.delivery{
+  color: rgb(233, 115, 0);
+}
+.buy{
+  color: rgb(212, 54, 132);
+}
+.des-content{
+  width: 33%;
+}
+
+#card-des div:nth-of-type(1) {flex-grow: 1;}
+#card-des div:nth-of-type(2) {flex-grow: 2;}
+#card-des div:nth-of-type(3) {flex-grow: 4;}

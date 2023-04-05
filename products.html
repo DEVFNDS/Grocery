@@ -20,7 +20,7 @@
         <button onclick="toggleSidebar()">X</button>
       </div>
       <div class="cart-items">
-        
+
       </div>
       <div id="empty-cart">
         No items in the cart !!
@@ -31,11 +31,26 @@
   <div class="popup-card">
     <div class="popup-content">
       <span class="close">&times;</span>
-      <img src="./assets/images/sugarcane.png" alt="Grocery Item">
-      <h4>Product Details</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac turpis eget dolor blandit aliquet ut sit amet
-        massa.</p>
-      <button onclick="addToCart(event)" class="card-add-to-cart">Add to Cart</button>
+      <div id="card-des" class="pre-des">
+        <div style="width: 33%;">
+          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
+        </div>
+        <div class="des-content">
+          <h4>Product Details</h4>
+          <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac turpis eget dolor blandit aliquet ut sit
+            amet
+            massa.</p>
+            
+        </div>
+        <div class="pre-amount">
+          <p>$8.29</p>
+          <p>$0.23/oz</p>
+          <h4 class="delivery">Free Delivery</h4>
+          <h4 class="buy">Buy 1 , get $2 off</h4>
+          <h5>Add 1 to qualify for deal(max 99 per order)</h5>
+          <button onclick="addToCart(event)" class="card-add-to-cart">Add to Cart</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -76,7 +91,7 @@
               <span id="quantity-1">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
-            
+
             <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
