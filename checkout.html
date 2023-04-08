@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/checkout.css" />
+    <script
+      src="https://kit.fontawesome.com/c940cf0420.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>GetDelivered</title>
+  </head>
+
+  <body>
+    <!-- side bar  -->
+    <div class="sidebar inactive" id="side">
+      <div class="sidebar-container">
+        <div class="sidebar-header">
+          <h3>Personal Cart</h3>
+          <button onclick="toggleSidebar()">X</button>
+        </div>
+        <div class="cart-items"></div>
+        <div id="empty-cart">No items in the cart !!</div>
+      </div>
+    </div>
+
+    <div class="popup-card">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <div id="card-des" class="pre-des">
+          <div style="width: 33%">
+            <img src="./assets/images/sugarcane.png" alt="Grocery Item" />
+          </div>
+          <div class="des-content">
+            <h4>Product Details</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
+              turpis eget dolor blandit aliquet ut sit amet massa.
+            </p>
+          </div>
+          <div class="pre-amount">
+            <p>$8.29</p>
+            <p>$0.23/oz</p>
+            <h4 class="delivery">Free Delivery</h4>
+            <h4 class="buy">Buy 1 , get $2 off</h4>
+            <h5>Add 1 to qualify for deal(max 99 per order)</h5>
+            <button onclick="addToCart(event)" class="card-add-to-cart">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlay">
+      <div class="main-content">
+        <nav class="navbar">
+          <a class="navbar-brand" href="#">Get Delivered</a>
+          <div class="navbar-search">
+            <input type="text" placeholder="Search for products" />
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="navbar-delivery">
+            <a href="#"><i class="fas fa-car"></i></a>
+            <span>Delivery to L5R1R1</span>
+          </div>
+          <div class="navbar-cart">
+            <button onclick="showSidebar()">
+              <i class="fas fa-shopping-cart"></i>
+            </button>
+            <span class="cart-count">0</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="check-out-container">
+      <div class="accordion-container">
+        <div class="options">
+          <div
+            class="option active"
+            id="delivery-option"
+            onclick="deliveryfn()"
+          >
+            <i class="fas fa-truck"></i>
+            <span>Delivery</span>
+          </div>
+          <div class="option" id="pickup-option" onclick="pickupfn()">
+            <i class="fas fa-store"></i>
+            <span>Pickup</span>
+          </div>
+        </div>
+        <div class="accordion active" id="delivery-accordion">
+          <div class="accordion-header">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Delivery Address</span>
+            <div class="icon-del">
+              <span class="accordion-icon">&#9660;</span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <form id="delivery-address-form">
+              <label for="address">Address:</label>
+              <input
+                type="text"
+                id="delivery-address"
+                placeholder="Enter your delivery address"
+                required
+              />
+              <span id="delivery-address-error" class="error"></span>
+
+              <label for="street-name">Street Name:</label>
+              <input
+                type="text"
+                id="street-name"
+                placeholder="Enter your street name"
+                required
+              />
+              <span id="street-name-error" class="error"></span>
+
+              <label for="postal-code">Postal Code:</label>
+              <input
+                type="text"
+                id="postal-code"
+                placeholder="Enter your postal code"
+                required
+              />
+              <span id="postal-code-error" class="error"></span>
+
+              <label for="country">Country:</label>
+              <select id="country" required>
+                <option value="">Select a country</option>
+                <option value="Canada">USA</option>
+                <option value="USA">Canada</option>
+
+                <!-- add more countries as needed -->
+              </select>
+              <span id="country-error" class="error"></span>
+            </form>
+          </div>
+          <div class="accordion-header">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Mobile Number</span>
+            <div class="icon-del">
+              <span class="accordion-icon">&#9660;</span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <label for="delivery-mobile">Mobile Number:</label>
+            <div class="mobile-input">
+              <select id="country-code" name="country-code">
+                <option value="+1">+1(USA)</option>
+                <option value="+1">+1(Canada)</option>
+                <!-- Add other country codes here -->
+              </select>
+              <input
+                type="text"
+                id="mobile-number"
+                name="mobile-number"
+                placeholder="123-456-7890"
+              />
+            </div>
+            <div id="mobile-error" class="error"></div>
+          </div>
+
+          <div class="accordion-header">
+            <i class="fas fa-clock"></i>
+            <span>Delivery Time</span>
+            <div class="icon-del">
+              <span class="accordion-icon">&#9660;</span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <span aria-hidden="false" class="del-time"
+              >Get unlimited free delivery for 14 days!</span
+            >
+            <div class="delivery-time-options">
+              <label>
+                <input
+                  type="radio"
+                  name="delivery-time-option"
+                  value="priority"
+                  checked
+                />
+                Priority Time by <span id="priority-time"></span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="delivery-time-option"
+                  value="standard"
+                />
+                Standard Time By <span id="standard-time"></span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="delivery-time-option"
+                  value="two-hour-window"
+                />
+                2 Hour Window
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="delivery-time-option"
+                  value="three-hour-window"
+                />
+                3 Hour Window
+              </label>
+            </div>
+            <input
+              type="text"
+              id="delivery-time"
+              placeholder="${priorityTime}"
+            />
+          </div>
+          <div class="accordion-header">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Delivery Instructions</span>
+            <div class="icon-del">
+              <span class="accordion-icon">&#9660;</span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <input
+              type="textarea"
+              id="delivery-instructions"
+              placeholder="Add access code,best entrance etc...."
+            />
+          </div>
+          <div class="accordion-header">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>Payment</span>
+            <div class="icon-del">
+              <span class="accordion-icon">&#9660;</span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div>Please select your card:</div>
+            <select id="card-dropdown">
+              <option value="Visa">Visa</option>
+              <option value="Master Card">Master Card</option>
+              <option value="American Express">American Express</option>
+            </select>
+            <form id="payment-form">
+              <label for="card-name">Cardholder Name:</label>
+              <input
+                type="text"
+                id="card-name"
+                name="card-name"
+                placeholder="Enter the name in the card"
+                required
+              />
+              <div id="cardname-error" class="error"></div>
+
+              <label for="card-number">Card Number:</label>
+              <input
+                type="text"
+                id="card-number"
+                name="card-number"
+                placeholder="XXXX XXXX XXXX XXXX"
+                required
+              />
+              <div id="cardnum-error" class="error"></div>
+              <label for="card-expiry">Expiry Date (MM/YY):</label>
+              <input
+                type="text"
+                id="card-expiry"
+                name="card-expiry"
+                placeholder="MM/YY"
+                style="width: 80px"
+                required
+              />
+              <label for="card-cvv">CVV:</label>
+              <input
+                type="text"
+                id="card-cvv"
+                name="card-cvv"
+                maxlength="3"
+                style="width: 50px"
+                required
+              />
+              <br /><br />
+              <div id="exp-error" class="error"></div>
+              <div id="cvv-error" class="error"></div>
+              <br /><br />
+            </form>
+          </div>
+        </div>
+        <div class="accordion" id="pickup-accordion">
+          <div class="accordion-header">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Pickup Location</span>
+            <div class="icon-del">
+              <span class="accordion-icon">&#9660;</span>
+            </div>
+          </div>
+
+          <div class="accordion-content">
+            <span class="pick-up-span">Select a Pick-up Location</span>
+            <div class="pickup-locations">
+              <div class="pickup-location">
+                <label>
+                  <input
+                    type="radio"
+                    name="pickup-location"
+                    value="mississauga"
+                    checked
+                  />
+                  <div class="pickup-details">
+                    <div class="pickup-name">Mississauga</div>
+                    <div class="pickup-address">
+                      123 Main St, Mississauga, ON L5B 1V2
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="pickup-location">
+                <label>
+                  <input type="radio" name="pickup-location" value="niagara" />
+                  <div class="pickup-details">
+                    <div class="pickup-name">Niagara</div>
+                    <div class="pickup-address">
+                      456 Queen St, Niagara, ON L2E 1H1
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="pickup-location">
+                <label>
+                  <input type="radio" name="pickup-location" value="brampton" />
+                  <div class="pickup-details">
+                    <div class="pickup-name">Brampton</div>
+                    <div class="pickup-address">
+                      789 King St, Brampton, ON L6T 1H1
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-header">
+            <i class="fas fa-clock"></i>
+            <span>Pickup Time</span>
+            <div class="icon-del">
+              <span class="accordion-icon">&#9660;</span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <span class="pick-up-span">Select a Pick-up Time</span>
+            <form id="pickup-form">
+              <div class="pick-up-time">
+                <label>
+                  <input
+                    type="radio"
+                    name="pickup-time"
+                    value="10:00am"
+                    checked
+                  />
+                  <span>10:00 AM</span>
+                </label>
+                <label>
+                  <input type="radio" name="pickup-time" value="12:00pm" />
+                  <span>12:00 PM</span>
+                </label>
+                <label>
+                  <input type="radio" name="pickup-time" value="2:00pm" />
+                  <span>2:00 PM</span>
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="accordion-header">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Mobile Number</span>
+            <div class="icon-del">
+              <span class="accordion-icon">&#9660;</span>
+            </div>
+          </div>
+
+          <div class="accordion-content">
+            <label for="pickup-mobile">Mobile Number:</label>
+            <div class="mobile-input">
+              <select id="country-code" name="country-code">
+                <option value="+1">+1(USA)</option>
+                <option value="+1">+1(Canada)</option>
+                <!-- Add other country codes here -->
+              </select>
+              <input
+                type="text"
+                id="pickup-mobile-number"
+                name="pickup-mobile-number"
+                placeholder="123-456-7890"
+                required
+              />
+            </div>
+            <div id="pickup-mobile-error" class="error"></div>
+          </div>
+          <div class="accordion-header">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>Payment</span>
+            <div class="icon-del">
+              <span class="accordion-icon">&#9660;</span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div>Please select your card:</div>
+            <select id="pick-up-card-dropdown">
+              <option value="Visa">Visa</option>
+              <option value="Master Card">Master Card</option>
+              <option value="American Express">American Express</option>
+            </select>
+            <form id="pick-up-payment-form">
+              <label for="pick-up-card-name">Cardholder Name:</label>
+              <input
+                type="text"
+                id="pick-up-card-name"
+                name="card-name"
+                placeholder="Enter the name in the card"
+                required
+              />
+              <div id="pick-up-cardname-error" class="error"></div>
+
+              <label for="pick-up-card-number">Card Number:</label>
+              <input
+                type="text"
+                id="pick-up-card-number"
+                name="card-number"
+                placeholder="XXXX XXXX XXXX XXXX"
+                required
+              />
+              <div id="pick-up-cardnum-error" class="error"></div>
+              <label for="pick-up-card-expiry">Expiry Date (MM/YY):</label>
+              <input
+                type="text"
+                id="pick-up-card-expiry"
+                name="card-expiry"
+                placeholder="MM/YY"
+                style="width: 80px"
+                required
+              />
+              <label for="pick-up-card-cvv">CVV:</label>
+              <input
+                type="text"
+                id="pick-up-card-cvv"
+                name="card-cvv"
+                maxlength="3"
+                style="width: 50px"
+                required
+              />
+              <br /><br />
+              <div id="pick-up-exp-error" class="error"></div>
+              <div id="pick-up-cvv-error" class="error"></div>
+              <br /><br />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="popup-overlay" id="pop-up-new">
+        <div class="popup">
+          <div class="popup-content">
+            <div class="popup-message">
+              <p>Order placed successfully!</p>
+            </div>
+            <div class="popup-close">
+              <i class="fas fa-times close-popup"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel-groc order">
+        <div class="right-groc-badge">
+          <img src="images/ribbon.webp" alt="" class="right-groc-display" />
+          <div class="right-groc-guar">
+            <p class="right-groc-guar1">100% satisfaction guarantee</p>
+            <div class="right-groc-guar2">
+              <p class="right-groc-guar3">
+                Place your order with peace of mind.
+              </p>
+              <button
+                aria-label="More info about 100% satisfaction guarantee"
+                class="right-groc-guar4"
+              >
+                <i
+                  class="fas fa-info-circle"
+                  style="color: #c7c8cd; font-size: 16px"
+                ></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div data-radium="true">
+          <div>
+            <div class="right-groc-items">
+              <dt role="presentation">Item subtotal</dt>
+              &nbsp;
+              <div class="right-groc-items1">
+                <dd role="presentation" classs="right-groc-items2">$32.91</dd>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="right-groc-item">
+                <div class="right-groc-info">
+                  <div class="right-groc-flex right-groc-service">
+                    <dt role="presentation">Service fee</dt>
+                    &nbsp;
+                    <button
+                      class="right-groc-btn"
+                      type="button"
+                      aria-label="additional information for Service fee"
+                      aria-expanded="false"
+                      data-radium="true"
+                    >
+                      <i
+                        class="right-groc-after-btn"
+                        aria-hidden="true"
+                        data-radium="true"
+                        ></i
+                      >
+                    </button>
+                    <div
+                      class="right-groc-grow right-groc-end right-groc-order-3 right-groc-margin-bottom-0"
+                    >
+                      <dd
+                        role="presentation"
+                        class="right-groc-margin-bottom-0"
+                      >
+                        $5.00
+                      </dd>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div data-radium="true">
+              <hr />
+
+              <div class="right-groc-bold">
+                <div>
+                  <div class="right-groc-subtotal">
+                    <dt role="presentation">Subtotal</dt>
+                    &nbsp;
+                    <div class="right-groc-subtotal-value">
+                      <dd role="presentation">$37.91</dd>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="place-order">
+                <button id="place-order-button" disabled>Place Order</button>
+              </div>
+              <div class="right-groc-totals">
+                <div class="right-groc-payments">
+                  <span>
+                    <span class="right-groc-normal-text"
+                      >Pay in 4 installments of $9.48 with</span
+                    >
+                    <span class="right-groc-bold">GDeliver</span>
+                    <span class="right-groc-normal-text">.</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="right-groc-savings">
+                <span>
+                  <span class="right-groc-bold red-text">You saved $4.12</span>
+                </span>
+              </div>
+
+              <div class="right-groc-reminder">
+                <span
+                  >If you forget anything, you can add items until the shopper
+                  checks out.</span
+                >
+              </div>
+
+              <div><hr /></div>
+
+              <div class="right-groc-container">
+                <div class="right-groc-promo">
+                  <button
+                    type="button"
+                    data-bypass="true"
+                    class="right-groc-promo-button"
+                  >
+                    Add promo code or gift card
+                  </button>
+                </div>
+                <div class="right-groc-loyalty">
+                  <span data-radium="true">
+                    <span class="right-groc-loyalty-title"
+                      >Loyalty Rewards</span
+                    ></span
+                  >
+                  <div class="right-groc-loyalty-content">
+                    <span class="right-groc-loyalty-text">
+                      In the future, you’ll be able to connect your GetDelivered
+                      app barcode.
+                    </span>
+                    <div class="right-groc-loyalty-image">
+                      <img src="images/logo.png" alt="Coming Soon" />
+                      <div style="flex: 1 1 auto">
+                        <form>
+                          <div class="right-groc-form">
+                            <div class="right-groc-input-container">
+                              <label
+                                for="card_number_input"
+                                class="right-groc-label"
+                                >Card Number</label
+                              >
+                              <input
+                                id="card_number_input"
+                                name="card_number"
+                                type="text"
+                                aria-invalid="false"
+                                aria-describedby=""
+                                autocomplete="off"
+                                placeholder=""
+                                class="right-groc-input"
+                                value=""
+                              />
+                              <div
+                                id="error_card_number_input"
+                                class="right-groc-error"
+                              ></div>
+                            </div>
+                          </div>
+                          <div class="right-groc-button-container">
+                            <button
+                              type="submit"
+                              hidden=""
+                              class="right-groc-button"
+                            >
+                              Verify
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(250, 250, 250);
+              padding: 24px;
+              font-size: 10px;
+            "
+          >
+            <div class="disclaimers" style="margin-top: 0px">
+              <span data-radium="true"
+                ><span style="font-weight: normal"
+                  >Your credit/debit card will be </span
+                ><span style="font-weight: bold"
+                  >temporarily authorized for $41.91</span
+                ><span style="font-weight: normal"
+                  >. Your statement will reflect the final order total after
+                  order completion. </span
+                ><a
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  href=""
+                  data-bypass="false"
+                  data-radium="true"
+                  style="color: rgb(67, 176, 42)"
+                  ><span style="color: rgb(9, 138, 9); font-weight: normal"
+                    >Learn more</span
+                  ></a
+                ></span
+              >
+            </div>
+            <div class="disclaimers" style="margin-top: 10px">
+              <span data-radium="true"
+                ><span style="font-weight: normal"
+                  >A bag fee may be added to your final total if required by law
+                  or the retailer. The fee will be visible on your receipt after
+                  delivery.</span
+                ></span
+              >
+            </div>
+            <div class="disclaimers" style="margin-top: 10px">
+              <span data-radium="true"
+                ><span style="font-weight: normal"
+                  >Prices may vary from those in store.</span
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/checkout.js"></script>
+  </body>
+</html>
