@@ -10,7 +10,7 @@
   <title>GetDelivered</title>
 </head>
 
-<body>
+<body onload="clearData()">
 
   <!-- side bar  -->
   <div class="sidebar inactive" id="side">
@@ -24,6 +24,9 @@
       </div>
       <div id="empty-cart">
         No items in the cart !!
+      </div>
+      <div>
+        <button onclick="addItemData()" class="card-add-to-cart">Checkout</button>
       </div>
     </div>
   </div>

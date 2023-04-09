@@ -31,9 +31,15 @@ function addToCart(event) {
   `;
 
   cart.appendChild(cartItem);
-
-  
-  
+  // add amount to the existing amount
+  var amount  = localStorage.getItem("amount");
+  console.log("amount",amount);
+  if(amount === null || isNaN(amount)){
+    console.log("no amount");
+    var __data = parseFloat(itemprice.replace(/[^\d.]/g, ""));
+    console.log(__data);
+    localStorage.setItem("amount",__data);
+  }
   event.target.style.display = "none";
   event.target.parentElement.querySelector(".quantity span").innerHTML = 1;
   event.target.parentElement.querySelector(".quantity").style.display = "block";
@@ -95,9 +101,17 @@ products.forEach((product) => {
   const quantityInput = product.querySelector(".quantity span");
 
   incrementBtn.addEventListener("click", (e) => {
+    console.log(e);
     var productID = e.target.parentElement.parentElement.id;
     document.getElementById("cart-"+ productID).querySelector(".cart-quantity").innerHTML = parseInt(quantityInput.innerHTML) + 1;
     quantityInput.innerHTML = parseInt(quantityInput.innerHTML) + 1;
+
+    // adding the price 
+    var priceStr =  document.getElementById("cart-"+ productID).querySelector(".cart-price").innerHTML
+    var price =  parseFloat(priceStr.replace(/[^\d.]/g, ""));
+    var amount = localStorage.getItem("amount");
+    localStorage.setItem("amount",parseFloat(amount)+parseFloat(price));
+    console.log(localStorage.getItem("amount"));
   });
 
   decrementBtn.addEventListener("click", (e) => {
@@ -106,8 +120,32 @@ products.forEach((product) => {
     if (parseInt(quantityInput.innerHTML) > 1) { 
       document.getElementById("cart-"+ productID).querySelector(".cart-quantity").innerHTML = parseInt(quantityInput.innerHTML) - 1;
       quantityInput.innerHTML = parseInt(quantityInput.innerHTML) - 1;
+
+      // subtracting the price 
+      var priceStr =  document.getElementById("cart-"+ productID).querySelector(".cart-price").innerHTML
+      var price =  parseFloat(priceStr.replace(/[^\d.]/g, ""));
+      var amount = localStorage.getItem("amount");
+      localStorage.setItem("amount",parseFloat(amount) - parseFloat(price));
+      console.log(localStorage.getItem("amount"));
     } else {
       remove("cart-"+ productID);
     }
   });
 });
+
+// adding to the local storage the the checkout data
+function addItemData(){
+  // looping through the data to add the amount
+  const data = document.querySelector(".cart-items");
+  console.log("data",data);
+  const strdata = data.innerHTML;
+  localStorage.setItem('data', strdata);
+
+  // const amountData = data.cart-items;
+
+}
+
+
+function clearData(){
+  localStorage.clear();
+}

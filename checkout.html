@@ -14,7 +14,7 @@
     <title>GetDelivered</title>
   </head>
 
-  <body>
+  <body onload="getData()">
     <!-- side bar  -->
     <div class="sidebar inactive" id="side">
       <div class="sidebar-container">
@@ -22,7 +22,7 @@
           <h3>Personal Cart</h3>
           <button onclick="toggleSidebar()">X</button>
         </div>
-        <div class="cart-items"></div>
+        <!-- <div class="cart-items"></div> -->
         <div id="empty-cart">No items in the cart !!</div>
       </div>
     </div>
@@ -501,11 +501,12 @@
 
         <div data-radium="true">
           <div>
+            <div class="cart-items"></div>
             <div class="right-groc-items">
               <dt role="presentation">Item subtotal</dt>
               &nbsp;
               <div class="right-groc-items1">
-                <dd role="presentation" classs="right-groc-items2">$32.91</dd>
+                <dd id="cost" role="presentation" classs="right-groc-items2">$32.91</dd>
               </div>
             </div>
           </div>
@@ -554,7 +555,7 @@
                     <dt role="presentation">Subtotal</dt>
                     &nbsp;
                     <div class="right-groc-subtotal-value">
-                      <dd role="presentation">$37.91</dd>
+                      <dd id="final-price" role="presentation">$37.91</dd>
                     </div>
                   </div>
                 </div>

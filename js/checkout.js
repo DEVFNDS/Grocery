@@ -479,3 +479,15 @@ const deliveryOption = document.getElementById("delivery-option");
           popupOverlay.style.display = "none";
         });
       });
+
+
+function getData(){
+  var cart = document.querySelector(".cart-items")
+  var data = localStorage.getItem('data')
+  console.log(data)
+  cart.innerHTML = data;
+
+  // setting up the cost data
+  document.getElementById('cost').innerHTML = localStorage.getItem("amount");
+  document.getElementById('final-price').innerHTML = parseFloat(localStorage.getItem("amount")) + 5;
+}
