@@ -140,7 +140,7 @@ function addItemData(){
   console.log("data",data);
   const strdata = data.innerHTML;
   localStorage.setItem('data', strdata);
-
+  window.location.href = "checkout.html"
   // const amountData = data.cart-items;
 
 }

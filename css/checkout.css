@@ -170,6 +170,8 @@
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 50%;
+    justify-content: center;
   }
 
   .option:hover {
@@ -460,7 +462,7 @@
     border: 12px solid #f5f5f5;
     padding: 30px;
     margin-top: 28px;
-    width: 22%;
+    width: 25%;
   }
 
   .order a {
@@ -888,4 +890,12 @@
     font-size: 12px;
     font-weight: 400;
     margin: 3px auto;
+  }
+  .checkout-cart-items .cart-items{
+    max-height: 230px;
+    overflow-y: overlay;
+    padding: 1px;
+  }
+  .checkout-cart-items {
+    margin: 10px 0;
   }

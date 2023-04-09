@@ -25,7 +25,7 @@
       <div id="empty-cart">
         No items in the cart !!
       </div>
-      <div>
+      <div class="product-checkout">
         <button onclick="addItemData()" class="card-add-to-cart">Checkout</button>
       </div>
     </div>
@@ -74,8 +74,8 @@
           <span class="cart-count">0</span>
         </div>
       </nav>
-
-      <h3>Products Near you</h3>
+      <div class="product-container">
+      <h3 class="product-header">Products Near you</h3>
 
       <div class="products">
         <div class="card">
@@ -100,7 +100,7 @@
         </div>
         <div class="card">
           <img src="./assets/images/sugarcane.png" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-2">
             <h4 class="card-title">Apples</h4>
             <span class="card-price">$3.99/lb</span>
             <div>
@@ -109,12 +109,13 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button onclick="addToCart(event)" class="card-add-to-cart">Add to Cart</button>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-2">0</span>
+              <span id="quantity-1">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="card">
@@ -156,7 +157,7 @@
           </div>
         </div>
       </div>
-      <h3>Fresh Fruits</h3>
+      <h3 class="product-header">Fresh Fruits</h3>
       <div class="products">
         <div class="card">
           <img src="./assets/images/sugarcane.png" alt="Grocery Item">
@@ -235,7 +236,7 @@
           </div>
         </div>
       </div>
-      <h3>Fresh Vegetables</h3>
+      <h3 class="product-header">Fresh Vegetables</h3>
       <div class="products">
         <div class="card">
           <img src="./assets/images/sugarcane.png" alt="Grocery Item">
@@ -314,6 +315,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 
