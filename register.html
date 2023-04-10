@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/4d48bc1474.js" crossorigin="anonymous"></script>
+    <title> login page</title>
+    <link rel="stylesheet" href="./css/login.css" class="css">
+</head>
+
+<body>
+    <div class="rcontainer">
+        <h1>Register</h1>
+    <div class="box">
+        <i class="fa fa-envelope"></i>
+        <input type="email" name="email" id="email" placeholder="Enter Your Email " oninput="handleValueChange()" >
+    </div>
+    <div class="box">
+        <i class="fa fa-envelope"></i>
+        <input type="email" name="email" id="email2" placeholder="Re enter Your Email " oninput="handleEqual()">
+    </div>
+    <div class="box">
+        <i class="fa fa-key"></i>
+        <input type="Password" name="Password" id="password" placeholder="Enter Your Password " >
+    </div>
+
+    <div class="box">
+        <i class="fa fa-user"></i>
+        <input type="text" name="username" id="username" placeholder="Enter Your Username">
+    </div>
+    
+    <button class="btn" onclick="validateForm()">Register</button>
+    </div>
+    
+    <script src="./js/register.js"></script>
+
+</body>
+
+</html>
