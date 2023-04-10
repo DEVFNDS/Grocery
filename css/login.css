@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-    background: url(../assets/images/yu1.jpeg) no-repeat center center fixed;
-    background-size: cover;
-    
-}
+
 .container{
     display:inline block;
     
@@ -47,7 +39,7 @@ body{
 .box {
     width: 100%;
     margin: 32px 0px;
-    border-bottom: 2px solid purple;
+    border-bottom: 2px solid orange;
     
 }
 .box input  {
@@ -59,7 +51,7 @@ body{
     font-size: 20px;
     border: none;
     outline: none;
-    color: white;
+    color: black;
 }
 .box i{
     padding: 20px 12px;
@@ -71,13 +63,13 @@ body{
 }
 
 .btn{
-    color: white;
+    color: black;
     cursor: pointer;
     outline: none;
    
-    margin: 12px 0;
+    margin: 0 auto;
     padding: 10px 21px;
-    border: 2px solid purple;
+    border: 2px solid orange;
     border-radius: 10px;
     font-size: 10px;
     background: 0px;
@@ -88,4 +80,20 @@ body{
     color: purple;
        background: white;
     
+}
+.login-btn{
+    text-align: center;
+}
+.register-btn {
+    text-align: center;
+}
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: orange;
 }

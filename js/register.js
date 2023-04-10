@@ -1,9 +1,9 @@
 function handleValueChange(){
-    var emailInput = document.getElementById("email")
+    var emailInput = document.getElementById("email1")
     var validemail =  (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput.value))
     
     if(validemail){
-        emailInput.style.color = "white";
+        emailInput.style.color = "black";
     }else{
         emailInput.style.color = "red";
     }
@@ -11,20 +11,20 @@ function handleValueChange(){
 }
 
 function handleEqual(){
-    var email = document.getElementById("email")
+    var email = document.getElementById("email1")
     var email2 = document.getElementById("email2")
     if(email.value != email2.value){
         email2.style.color = "red";
         return false;
     }
     else{
-        email2.style.color = "white";
+        email2.style.color = "black";
         return true;
     }
 }
 
 function validateForm(){
-    var emailId = document.getElementById("email").value;
+    var emailId = document.getElementById("email1").value;
     var cemailId = document.getElementById("email2").value;
     var pswd = document.getElementById("password").value;
     var username = document.getElementById("username").value;

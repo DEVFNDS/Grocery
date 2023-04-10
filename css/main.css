@@ -1,10 +1,15 @@
+body{
+  margin: 0;
+}
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #F5F5F5;
     height: 60px;
-    padding: 0 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
   }
   
   .navbar-brand {
@@ -157,6 +162,7 @@
     background-color: #f1f1f1;
     overflow-x: hidden;
     padding-top: 20px;
+    z-index: 10;
     
   }
 
@@ -174,6 +180,7 @@
   .main-content {
     pointer-events: auto;
     overflow: hidden;
+    padding: 50px 0;
   }
 
   .sidebar.inactive {
@@ -287,17 +294,16 @@
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .popup-content {
   background-color: #fff;
   margin: 15% auto;
-  padding: 20px;
+  padding: 35px 20px;
   border-radius: 5px;
   width: 1000px;
-  height: 300px;
+  max-height: 500px;
   text-align: center;
   position: relative;
 }
@@ -341,12 +347,13 @@
 .pre-des{
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
-.pre-amount{
+/*.pre-amount{
   border: 1px solid rgba(235, 218, 218, 0.603);
 
-}
+}*/
 
 .delivery{
   color: rgb(233, 115, 0);
@@ -375,6 +382,44 @@
   margin: 30px 0;
   font-family: monospace;
   font-size: 20px;
+}
+
+
+.navbar-login-register a{
+  padding: 9px 13px;
+  margin: 0 3px;
+  background-color: teal;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login-register-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 8;
+}
+.login-register-overlay>div{
+    margin: 150px auto;
+    padding: 20px;
+    background-color: antiquewhite;
+    color: black;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+.login-register-overlay:target {
+  visibility: visible;
+  opacity: 1;
 }
 
 #card-des div:nth-of-type(1) {flex-grow: 1;}

@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/login.css" >
   <script src="https://kit.fontawesome.com/c940cf0420.js" crossorigin="anonymous"></script>
   <title>GetDelivered</title>
 </head>
@@ -57,23 +58,74 @@
     </div>
   </div>
 
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">Get Delivered</a>
+    <div class="navbar-search">
+      <input type="text" placeholder="Search for products">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="navbar-delivery">
+      <a href="#"><i class="fas fa-car"></i></a>
+      <span>Delivery to L5R1R1</span>
+    </div>
+    <div class="navbar-login-register">
+      <a href="#log-in" class="login-header" >Login</a>
+      <a href="#register" class="login-header" >Register</a>
+    </div>
+    <div class="navbar-cart">
+      <button onclick="showSidebar()"><i class="fas fa-shopping-cart"></i></button>
+      <span class="cart-count">0</span>
+    </div>
+  </nav>
+  
   <div id="overlay">
     <div class="main-content">
-      <nav class="navbar">
-        <a class="navbar-brand" href="#">Get Delivered</a>
-        <div class="navbar-search">
-          <input type="text" placeholder="Search for products">
-          <button type="submit"><i class="fas fa-search"></i></button>
+      
+
+      <div id="log-in" class="login-register-overlay">
+        
+        <div>
+          <a class="close" href="#">×</a>
+          <h1>Log In</h1>
+          <div class="box">
+              <i class="fa fa-envelope"></i>
+              <input type="email" name="email" id="email" placeholder="Enter Your Email ">
+          </div>
+          <div class="box">
+              <i class="fa fa-key"></i>
+              <input type="Password" name="Password" id="Password" placeholder="Enter Your Password ">
+          </div>
+          <div class="login-btn"><button class="btn">Log In</button></div>
         </div>
-        <div class="navbar-delivery">
-          <a href="#"><i class="fas fa-car"></i></a>
-          <span>Delivery to L5R1R1</span>
+      </div>
+
+      <div id="register" class="login-register-overlay">
+        <div>
+          <a class="close" href="#">×</a>
+          <h1>Register</h1>
+          <div class="box">
+              <i class="fa fa-envelope"></i>
+              <input type="email" name="email" id="email1" placeholder="Enter Your Email " oninput="handleValueChange()" >
+          </div>
+          <div class="box">
+              <i class="fa fa-envelope"></i>
+              <input type="email" name="email" id="email2" placeholder="Re enter Your Email " oninput="handleEqual()">
+          </div>
+          <div class="box">
+              <i class="fa fa-key"></i>
+              <input type="Password" name="Password" id="password" placeholder="Enter Your Password " >
+          </div>
+      
+          <div class="box">
+              <i class="fa fa-user"></i>
+              <input type="text" name="username" id="username" placeholder="Enter Your Username">
+          </div>
+          <div class="register-btn">
+            <button class="btn" onclick="validateForm()">Register</button>
+          </div>
         </div>
-        <div class="navbar-cart">
-          <button onclick="showSidebar()"><i class="fas fa-shopping-cart"></i></button>
-          <span class="cart-count">0</span>
-        </div>
-      </nav>
+      </div>
+
       <div class="product-container">
       <h3 class="product-header">Products Near you</h3>
 
@@ -320,6 +372,7 @@
   </div>
 
   <script src="./js/script.js"></script>
+  <script src="./js/register.js"></script>
 
 </body>
 
