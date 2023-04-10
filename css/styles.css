@@ -235,3 +235,17 @@ ul, ol, li {
 .feature-details__description{
   font-size: 16px;
 }
+
+.feature-details__subtitle{
+  margin: auto;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.image-icon {
+  border-radius: 50%;
+  border: 2px solid black;
+}
