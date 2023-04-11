@@ -489,5 +489,5 @@ function getData(){
 
   // setting up the cost data
   document.getElementById('cost').innerHTML = localStorage.getItem("amount");
-  document.getElementById('final-price').innerHTML = parseFloat(localStorage.getItem("amount")) + 5;
+  document.getElementById('final-price').innerHTML = parseFloat(parseFloat(localStorage.getItem("amount")) + 5).toFixed(2) ;
 }

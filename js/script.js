@@ -36,13 +36,13 @@ function addToCart(event) {
   console.log("amount",amount);
   if(amount === null || isNaN(amount)){
     console.log("no amount");
-    var __data = parseFloat(itemprice.replace(/[^\d.]/g, ""));
+    var __data = parseFloat(itemprice.replace(/[^\d.]/g, "")).toFixed(2);
     console.log(__data);
     localStorage.setItem("amount",__data);
   }else{
     var __data = localStorage.getItem("amount");
     var price = parseFloat(itemprice.replace(/[^\d.]/g, ""));
-    localStorage.setItem("amount",parseFloat(__data)+parseFloat(price));
+    localStorage.setItem("amount",parseFloat(parseFloat(__data)+parseFloat(price) ).toFixed(2));
   }
   event.target.style.display = "none";
   event.target.parentElement.querySelector(".quantity span").innerHTML = 1;
@@ -132,7 +132,7 @@ products.forEach((product) => {
     var priceStr =  document.getElementById("cart-"+ productID).querySelector(".cart-price").innerHTML
     var price =  parseFloat(priceStr.replace(/[^\d.]/g, ""));
     var amount = localStorage.getItem("amount");
-    localStorage.setItem("amount",parseFloat(amount)+parseFloat(price));
+    localStorage.setItem("amount",parseFloat(parseFloat(amount) +parseFloat(price)).toFixed(2));
     console.log(localStorage.getItem("amount"));
   });
 
@@ -147,7 +147,7 @@ products.forEach((product) => {
       var priceStr =  document.getElementById("cart-"+ productID).querySelector(".cart-price").innerHTML
       var price =  parseFloat(priceStr.replace(/[^\d.]/g, ""));
       var amount = localStorage.getItem("amount");
-      localStorage.setItem("amount",parseFloat(amount) - parseFloat(price));
+      localStorage.setItem("amount", parseFloat(parseFloat(amount) - parseFloat(price)).toFixed(2));
       console.log(localStorage.getItem("amount"));
     } else {
       remove("cart-"+ productID);
