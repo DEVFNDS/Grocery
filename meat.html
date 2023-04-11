@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <script src="https://kit.fontawesome.com/c940cf0420.js" crossorigin="anonymous"></script>
+  <title>GetDelivered</title>
+  <link rel="icon" href="./assets/images/logo.png" type="image/icon type">
+</head>
+
+<body onload="clearData()">
+
+  <!-- side bar  -->
+  <div class="sidebar inactive" id="side">
+    <div class="sidebar-container">
+      <div class="sidebar-header">
+        <h3>Personal Cart</h3>
+        <button onclick="toggleSidebar()">X</button>
+      </div>
+      <div id="empty-cart">
+        No items in the cart !!
+      </div>
+      <div class="cart-items">
+
+      </div>
+
+      <div class="product-checkout">
+        <button onclick="addItemData()" class="card-add-to-cart">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-card">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <div id="card-des" class="pre-des">
+        <div style="width: 33%;">
+          <img id="#img-des" src="./assets/images/sugarcane.png" alt="Grocery Item">
+        </div>
+        <div class="des-content">
+          <h4>Product Details</h4>
+          <p id="#product-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac turpis eget dolor blandit
+            aliquet ut sit
+            amet
+            massa.</p>
+
+        </div>
+        <div class="pre-amount">
+          <p id="#des-pr">$8.29</p>
+          <p>$0.23/oz</p>
+          <h4 class="delivery">Free Delivery</h4>
+          <h4 class="buy">Buy 1 , get $2 off</h4>
+          <h5>Add 1 to qualify for deal(max 99 per order)</h5>
+          <button onclick="addToCart(event)" class="card-add-to-cart">Save</button>
+        </div>
+      </div>
+      <h3 class="product-header">Often bought by you</h3>
+      <!-- This is product often bought -->
+      <div class="carousel-container">
+        <div class="carousel-slide products">
+          <div class="card">
+            <img onclick="showPoup('yogurt')" src="./assets/images/yogurt.PNG" alt="Grocery Item">
+            <div class="card-details" id="product-13">
+              <h4 class="card-title">Yogurt</h4>
+              <span class="card-price">$14.29</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-1">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('kiwi')" src="./assets/images/kiwi.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-14">
+              <h4 class="card-title">Kiwi</h4>
+              <span class="card-price">$11.19</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-2">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('broccoli')" src="./assets/images/broccoli.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-15">
+              <h4 class="card-title">Broccoli</h4>
+              <span class="card-price">$16.19</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-3">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('PineApple')" src="./assets/images/pineapple.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-16">
+              <h4 class="card-title">PineApple</h4>
+              <span class="card-price">$12.49/lb</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-4">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('yogurt')" src="./assets/images/milk.webp" alt="Grocery Item">
+            <div class="card-details" id="product-17">
+              <h4 class="card-title">Milk</h4>
+              <span class="card-price">$5.29</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-1">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('yogurt')" src="./assets/images/bread.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-18">
+              <h4 class="card-title">Bread</h4>
+              <span class="card-price">$2.23</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-1">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('yogurt')" src="./assets/images/cheese.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-19">
+              <h4 class="card-title">Cheese</h4>
+              <span class="card-price">$10.29</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-1">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+
+            </div>
+          </div>
+        </div>
+        <button class="carousel-prev"><i class="fa-solid fa-chevron-left fa-beat-fade"></i></button>
+        <button class="carousel-next"><i class="fa-solid fa-chevron-right fa-beat-fade"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <!-- <img src="./assets/images/logo.png" alt=""> -->
+    <a class="navbar-brand" href="#">Get Delivered</a>
+    <div class="navbar-search">
+      <input type="text" placeholder="Search for products">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="navbar-delivery">
+      <a href="#"><i class="fas fa-car"></i></a>
+      <span>Delivery to L5R1R1</span>
+    </div>
+    <div class="navbar-login-register">
+      <a href="#log-in" class="login-header">Login</a>
+      <a href="#register" class="login-header">Register</a>
+    </div>
+    <div class="navbar-cart">
+      <button onclick="showSidebar()"><i class="fas fa-shopping-cart"></i></button>
+      <span id="count-header" class="cart-count">0</span>
+    </div>
+  </nav>
+
+  <div id="overlay">
+    <div class="main-content">
+
+
+      <div id="log-in" class="login-register-overlay">
+
+        <div>
+          <a class="close" href="#">×</a>
+          <h1>Log In</h1>
+          <div class="box">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" id="email" placeholder="Enter Your Email ">
+          </div>
+          <div class="box">
+            <i class="fa fa-key"></i>
+            <input type="Password" name="Password" id="Password" placeholder="Enter Your Password ">
+          </div>
+          <div class="login-btn"><button class="btn">Log In</button></div>
+        </div>
+      </div>
+
+      <div id="register" class="login-register-overlay">
+        <div>
+          <a class="close" href="#">×</a>
+          <h1>Register</h1>
+          <div class="box">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" id="email1" placeholder="Enter Your Email " oninput="handleValueChange()">
+          </div>
+          <div class="box">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" id="email2" placeholder="Re enter Your Email " oninput="handleEqual()">
+          </div>
+          <div class="box">
+            <i class="fa fa-key"></i>
+            <input type="Password" name="Password" id="password" placeholder="Enter Your Password ">
+          </div>
+
+          <div class="box">
+            <i class="fa fa-user"></i>
+            <input type="text" name="username" id="username" placeholder="Enter Your Username">
+          </div>
+          <div class="register-btn">
+            <button class="btn" onclick="validateForm()">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-container">
+        <h3 class="product-header">Products Near you</h3>
+
+        <div class="products">
+          <div class="card">
+            <img onclick="showPoup('beef')" src="./assets/images/beef.jpg" alt="Grocery Item">
+            <div class="card-details" id="product-28">
+              <h4 class="card-title">Beef</h4>
+              <span class="card-price">$44.20/kg</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-1">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('groundbeef')" src="./assets/images/GroundBeef.jpg" alt="Grocery Item">
+            <div class="card-details" id="product-29">
+              <h4 class="card-title">Ground Beef</h4>
+              <span class="card-price">$41.07</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-2">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('steak')" src="./assets/images/steak.jpg" alt="Grocery Item">
+            <div class="card-details" id="product-30">
+              <h4 class="card-title">Steak</h4>
+              <span class="card-price">$50.96</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-3">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('chicken')" src="./assets/images/chicken.jpg" alt="Grocery Item">
+            <div class="card-details" id="product-31">
+              <h4 class="card-title">Chicken</h4>
+              <span class="card-price">$38.35</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-4">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <h3 class="product-header"></h3>
+        <div class="products">
+          <div class="card">
+            <img onclick="showPoup('meat')" src="./assets/images/meat.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-32">
+              <h4 class="card-title">Meat</h4>
+              <span class="card-price">$22.39</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-5">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('pepperoni')" src="./assets/images/pepperoni.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-33">
+              <h4 class="card-title">Pepperoni</h4>
+              <span class="card-price">$23.69</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-6">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('gourmet')" src="./assets/images/gourmet.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-34">
+              <h4 class="card-title">Gourmet</h4>
+              <span class="card-price">$19.89</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-7">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('bacon')" src="./assets/images/bacon.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-35">
+              <h4 class="card-title">Bacon</h4>
+              <span class="card-price">$24.89</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-8">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+  <script src="./js/register.js"></script>
+
+</body>
+
+</html>
