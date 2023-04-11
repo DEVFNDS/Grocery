@@ -312,7 +312,7 @@ body{
   overflow-y: scroll;
 }
 
-.popup-content {
+.popup-card .popup-content {
   background-color: #fff;
   margin: 5% auto;
   padding: 35px 20px;

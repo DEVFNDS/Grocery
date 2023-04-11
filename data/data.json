@@ -71,6 +71,198 @@
             "product_description" : "Potatoes are a staple food that is enjoyed in many different cuisines around the world. They belong to the Solanaceae family, which also includes tomatoes, peppers, and eggplants. Potatoes are believed to have originated in the Andes region of South America and are now grown in many countries around the world, with China being the largest producer.",
             "image":"./assets/images/potato.jpeg",
             "price":"$8.09/lb"
+         },
+         {
+            "name":"Kirkland",
+            "product_description": "Item details are not yet available",
+            "image":"./assets/images/kirkland.jpg",
+            "price":"$8.69"
+         },
+         {
+            "name":"braided",
+            "product_description" : "Item details are not yet available",
+            "image": "./assets/images/braided.jpg",
+            "price" : "$9.99"
+         },
+         {
+            "name":"muffins",
+            "product_description":"Item details are not yet available",
+            "image":"./assets/images/muffins.jpeg",
+            "price" : "$12.49"
+         },
+         {
+            "name":"Chocolatines",
+            "product_description" : "Item details are not yet available",
+            "image" : "./assets/images/chocolatines.jpg",
+            "price" : "$9.99"
+         },
+         {
+            "name":"cookie",
+            "product_description" : "Item details are not yet available",
+            "image" :"./assets/images/cookie.jpg",
+            "price" : "$12.49"
+         },
+         {
+            "name":"cheesecake",
+            "product_description":"Item details are not yet available",
+            "image":"./assets/images/cheesecake.jpg",
+            "price":"$29.49"
+         },
+         {
+            "name":"buns",
+            "product_description":"Item details are not yet available",
+            "image" : "./assets/images/buns.jpg",
+            "price" : "$11.19"
+         },
+         {
+            "name":"brochie",
+            "product_description" : "Item details are not yet available",
+            "image" : "./assets/images/brochie.jpg",
+            "price" : "$7.49"
+         },
+         {
+            "name":"beef",
+            "product_description" : "AAA Keep refrigerated",
+            "image" : "./assets/images/beef.jpg",
+            "price" : "$44.20/kg"
+         },
+         {
+            "name":"groundbeef",
+            "product_description" : "Keep Refrigerated",
+            "image":"./assets/images/GroundBeef.jpg",
+            "price" : "$41.07"
+         },
+         {
+            "name":"steak",
+            "product_description": "Canada AAA Keep refrigerated",
+            "image" : "./assets/images/steak.jpg",
+            "price":"$50.96"
+         },
+         {
+            "name":"chicken",
+            "product_description":"Air chilled Boneless Skinless Keep refrigerated",
+            "image":"./assets/images/chicken.jpg",
+            "price":"$38.35"
+         },
+         {
+            "name":"meat",
+            "product_description" : "Assortment pack of: oven-roasted turkey, smoked black forest ham and oven-roasted chicken Low in fat Keep refrigerated",
+            "image" : "./assets/images/meat.jpeg",
+            "price" : "$22.39"
+         },
+         {
+            "name":"pepperoni",
+            "product_description" : "Turkey made with all natural ingredients Naturally smoked Lean Gluten and lactose-free 2 Ã— 500 g",
+            "image" : "./assets/images/pepperoni.jpeg",
+            "price":"$23.69"
+         },
+         {
+            "name":"Gourmet",
+            "product_description":"Hot calabrese salami Hot capocollo salami Pepper salami 500 g Keep refrigerated",
+            "image":"./assets/images/gourmet.jpeg",
+            "price" : "$19.89"
+         },
+         {
+            "name":"bacon",
+            "product_description":"Gluten-free Sliced 500 g per pack Pack of 4 Keep refrigerated",
+            "image":"./assets/images/bacon.jpeg",
+            "price":"$24.89"
+         },
+         {
+            "name":"tilapia",
+            "product_description":"Boneless and skinless Raised without the use of antibiotics Individually vacuum-packed Resealable bag Keep frozen",
+            "image":"./assets/images/tilapia.jpeg",
+            "price":"$31.09/kg"
+         },
+         {
+            "name":"haddock",
+            "product_description":"Features: Wild caught Product of Canada Resealable bag 1.2 kg Keep frozen",
+            "image":"./assets/images/haddock.jpeg",
+            "price":"$29.89"
+         },
+         {
+            "name":"salmon",
+            "product_description":"Item details are not yet available",
+            "image":"./assets/images/salmon.jpg",
+            "price":"$34.87"
+         },
+         {
+            "name":"basalions",
+            "product_description":"Individually vacuum packed loins Farm raised Resealable bag Approximately 9 loins Keep frozen",
+            "image":"./assets/images/basalions.jpeg",
+            "price":"$21.19"
+         },
+         {
+            "name":"trout",
+            "product_description":"Item details are not yet available",
+            "image":"./assets/images/trout.jpg",
+            "price":"$44.54"
+         },
+         {
+            "name":"solefillets",
+            "product_description":"Item details are not yet available",
+            "image":"./assets/images/solefillets.jpg",
+            "price":"$24.89"
+         },
+         {
+            "name":"tuna",
+            "product_description":"Item details are not yet available",
+            "image":"./assets/images/tuna.jpeg",
+            "price":"$31.09"
+         },
+         {
+            "name":"poke",
+            "product_description":"Item details are not yet available",
+            "image":"./assets/images/poke.jpeg",
+            "price":"$24.89"
+         },
+         {
+            "name":"coke",
+            "product_description":"Coca-cola Total 32 cans 32 x 355 mL",
+            "image":"./assets/images/coke.jpeg",
+            "price":"$17.99"
+         },
+         {
+            "name":"dietcoke",
+            "product_description":"No sugar No calories 355 mL per can Total of 32 cans",
+            "image":"./assets/images/dietcoke.jpeg",
+            "price":"$17.99"
+         },
+         {
+            "name":"pepsi",
+            "product_description":"Features: 355 mL per can Total of 32 cans",
+            "image":"./assets/images/pepsi.jpeg",
+            "price":"$18.09"
+         },
+         {
+            "name":"water",
+            "product_description":"Easy to grip, our 500 mL bottle will keep you hydrated wherever you are. Features: Healthy Hydration Spring Water With Naturally Occurring electrolytes for a crisp taste",
+            "image":"./assets/images/water.PNG",
+            "price":"$4.99"
+         },
+         {
+            "name":"sparkling",
+            "product_description":"Features: Sparkling water Flavours: 8 cherry, 8 blackberry, 8 orange Zero calories No sweeteners 24 × 355 mL",
+            "image":"./assets/images/sparkling.PNG",
+            "price":"$12.49"
+         },
+         {
+            "name":"juice",
+            "product_description":"Enjoy the great taste of simple ingredients of Fresh’n Pure’s Pineapple Burst. Our promise is to give you 100% juice 100% of the time. Features: Pineapple burst 6 × 1 L 100% juice No sugar added ",
+            "image":"./assets/images/juice.PNG",
+            "price":"$11.89"
+         },
+         {
+            "name":"applejuice",
+            "product_description":"A delicious and refreshing drink in a convenient on-the-go packaging with no sugar added and an excellent source of vitamin C. Features: Apple Calcium 24 x 300 mL A delicious and refreshing drink",
+            "image":"./assets/images/apple-juice.PNG",
+            "price":">$19.89"
+         },
+         {
+            "name":"orangejuice",
+            "product_description":" delicious and refreshing drink in a convenient on-the-go packaging with no sugar added and an excellent source of vitamin C Features: 100% Juice A delicious and refreshing drink",
+            "image":"./assets/images/orange-juice.PNG",
+            "price":"$19.89"
          }
     ]
 }
