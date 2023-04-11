@@ -1,6 +1,85 @@
 .right-groc-display {
     width: 50px;
   }
+  .groc-bottom-gif-container {
+    border-top: 1px solid rgb(229, 237, 236);
+    background: white;
+    margin-top:90px;
+  }
+  
+  .groc-bottom-gift-inner {
+    padding: 24px;
+    position: relative;
+    scroll-margin-top: 57px;
+  }
+  
+  .groc-bottom-gift-icon {
+    position: absolute;
+    top: calc(50% - 12px);
+    cursor: pointer;
+    border: none;
+    background: none;
+    left: 25px;
+  }
+  
+  .groc-bottom-gift-content {
+    margin-left: 42px;
+    margin-right: 42px;
+  }
+  
+  .groc-bottom-gift-title {
+    margin: 0px;
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: bold;
+    color: rgb(114, 118, 126);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 10px;
+
+  }
+  .gift{
+    display: flex;
+    justify-content: unset;
+   
+  }
+  
+  .groc-bottom-gift-btn {
+    position: absolute;
+    top: calc(50% - 12px);
+    cursor: pointer;
+    border: none;
+    background: none;
+    right: 25px;
+    display: none;
+  }
+  
+  .groc-bottom {
+    margin-top: 8px;
+    margin-left: 0px;
+  }
+  
+  .groc-bottom__title {
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+  
+  .groc-bottom__list {
+    height: 40px;
+   
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width:20%;
+    height:100px;
+  }
+  
+  .groc-bottom__list li {
+    width: 40px;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
   .pick-up-span {
     color: blue;
   }

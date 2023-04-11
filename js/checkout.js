@@ -79,7 +79,7 @@ const deliveryOption = document.getElementById("delivery-option");
 
       function validateCardExp() {
         // Regular expression for expiry date validation
-        const regexExp = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+        const regexExp = /^(0[1-9]|1[0-2])\/([2-9][2-9]|[3-9][0-9])$/;
         if (!cardExpiry.value) {
           cardExpError.textContent = "Card Expiry date is required.";
           cardExpError.style.color = "red";
@@ -265,7 +265,7 @@ const deliveryOption = document.getElementById("delivery-option");
 
       function validateCardExpPickUp() {
         // Regular expression for expiry date validation
-        const regexExp = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+        const regexExp = /^(0[1-9]|1[0-2])\/([2-9][2-9]|[3-9][0-9])$/;
         if (!cardExpiryPickUp.value) {
           cardExpErrorPickUp.textContent = "Card Expiry date is required.";
           cardExpErrorPickUp.style.color = "red";
@@ -490,4 +490,25 @@ function getData(){
   // setting up the cost data
   document.getElementById('cost').innerHTML = localStorage.getItem("amount");
   document.getElementById('final-price').innerHTML = parseFloat(parseFloat(localStorage.getItem("amount")) + 5).toFixed(2) ;
+
+  var cartBottom=document.querySelector(".cart-items-bottom");
+
+    cartBottom.innerHTML=data;
+  
+    var cartDetails = document.querySelectorAll(".groc-bottom__list .cart-detail");
+    cartBottom.style.display="flex";
+    for (var i = 0; i < cartDetails.length; i++) {
+      cartDetails[i].style.display = "none";
+    }
+  
+}
+function toggleGiftMessage() {
+  var checkbox = document.getElementById("gift-wrap-checkbox");
+  var message = document.getElementById("gift-message");
+  if (checkbox.checked) {
+    message.style.display = "block";
+    message.style.color="green";
+  } else {
+    message.style.display = "none";
+  }
 }
