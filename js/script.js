@@ -74,7 +74,23 @@ function showSidebar() {
   document.querySelector(".main-content").style.pointerEvents = "none";
 }
 
-function showPoup() {
+function showPoup(val) {
+  
+  // data fetch functinality to fetch data from json
+  fetch('./data/data.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data['data']);
+    var values = data['data']
+    for(var i=0;i<values.length;i++){
+      console.log(values[i]['name'])
+      if(values[i]['name'] == val){
+        document.getElementById("#product-des").innerHTML = values[i]['product_description']
+      }
+    }
+  })
+  
+  
   popupCard.style.display = "block";
 }
 
