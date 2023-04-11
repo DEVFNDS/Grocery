@@ -55,6 +55,89 @@
           <button onclick="addToCart(event)" class="card-add-to-cart">Save</button>
         </div>
       </div>
+      <h3 class="product-header">Often bought by you</h3>
+      <!-- This is product often bought -->
+      <div class="products">
+        <div class="card">
+          <img onclick="showPoup('yogurt')" src="./assets/images/yogurt.PNG" alt="Grocery Item">
+          <div class="card-details" id="product-13">
+            <h4 class="card-title">Yogurt</h4>
+            <span class="card-price">$14.29</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <div class="quantity">
+              <button class="card-add-to-cart decrement">-</button>
+              <span id="quantity-1">1</span>
+              <button class="card-add-to-cart increment">+</button>
+            </div>
+
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img onclick="showPoup('kiwi')" src="./assets/images/kiwi.jpeg" alt="Grocery Item">
+          <div class="card-details" id="product-14">
+            <h4 class="card-title">Kiwi</h4>
+            <span class="card-price">$11.19</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <div class="quantity">
+              <button class="card-add-to-cart decrement">-</button>
+              <span id="quantity-2">1</span>
+              <button class="card-add-to-cart increment">+</button>
+            </div>
+
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img onclick="showPoup('broccoli')" src="./assets/images/broccoli.jpeg" alt="Grocery Item">
+          <div class="card-details" id="product-15">
+            <h4 class="card-title">Broccoli</h4>
+            <span class="card-price">$16.19</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <div class="quantity">
+              <button class="card-add-to-cart decrement">-</button>
+              <span id="quantity-3">1</span>
+              <button class="card-add-to-cart increment">+</button>
+            </div>
+          
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img onclick="showPoup('Mandarins')" src="./assets/images/pineapple.jpeg" alt="Grocery Item">
+          <div class="card-details"  id="product-16">
+            <h4 class="card-title">Mandarins</h4>
+            <span class="card-price">$12.49/lb</span>
+            <div>
+              Buy 1 , get $2 off
+            </div>
+            <p class="card-available">
+              Many in cart
+            </p>
+            <div class="quantity">
+              <button class="card-add-to-cart decrement">-</button>
+              <span id="quantity-4">1</span>
+              <button class="card-add-to-cart increment">+</button>
+            </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -163,7 +246,7 @@
             </p>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-1">1</span>
+              <span id="quantity-2">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
 
@@ -172,7 +255,7 @@
         </div>
         <div class="card">
           <img onclick="showPoup('Watermilon')" src="./assets/images/watermilon.jpeg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-3">
             <h4 class="card-title">Watermilon</h4>
             <span class="card-price">$8.09/lb</span>
             <div>
@@ -181,17 +264,18 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-3">0</span>
+              <span id="quantity-3">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+          
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="card">
           <img onclick="showPoup('Mandarins')" src="./assets/images/mandarins.jpg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details"  id="product-4">
             <h4 class="card-title">Mandarins</h4>
             <span class="card-price">$12.49/lb</span>
             <div>
@@ -200,12 +284,12 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-4">0</span>
+              <span id="quantity-4">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -213,7 +297,7 @@
       <div class="products">
         <div class="card">
           <img onclick="showPoup('Apples')" src="./assets/images/apples.jpeg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-5">
             <h4 class="card-title">Apples</h4>
             <span class="card-price">$11.19/lb</span>
             <div>
@@ -222,17 +306,17 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-5">0</span>
+              <span id="quantity-5">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="card">
           <img onclick="showPoup('Pear')" src="./assets/images/pear.jpeg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-6">
             <h4 class="card-title">Pear</h4>
             <span class="card-price">$12.49/lb</span>
             <div>
@@ -241,17 +325,17 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-6">0</span>
+              <span id="quantity-6">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="card">
           <img  onclick="showPoup('Blueberry')" src="./assets/images/blueberry.jpeg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-7">
             <h4 class="card-title">Blueberry</h4>
             <span class="card-price">$12.49/lb</span>
             <div>
@@ -260,17 +344,18 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
+            
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-7">0</span>
+              <span id="quantity-7">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="card">
           <img onclick="showPoup('Orange')"  src="./assets/images/orange.jpeg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-8">
             <h4 class="card-title">Orange</h4>
             <span class="card-price">$16.19/lb</span>
             <div>
@@ -279,12 +364,13 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
+            
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-8">0</span>
+              <span id="quantity-8">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -292,7 +378,7 @@
       <div class="products">
         <div class="card">
           <img  onclick="showPoup('Spinach')" src="./assets/images/spinach.jpeg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-9">
             <h4 class="card-title">Spinach</h4>
             <span class="card-price">$6.29/lb</span>
             <div>
@@ -301,17 +387,18 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
+         
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-9">0</span>
+              <span id="quantity-9">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="card">
           <img  onclick="showPoup('Tomato')" src="./assets/images/tomato.jpeg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-10">
             <h4 class="card-title">Tomato</h4>
             <span class="card-price">$9.99/lb</span>
             <div>
@@ -320,17 +407,17 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-10">0</span>
+              <span id="quantity-10">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="card">
           <img onclick="showPoup('Cucumber')" src="./assets/images/cucumber.jpg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-11">
             <h4 class="card-title">Cucumber</h4>
             <span class="card-price">$4.99/lb</span>
             <div>
@@ -339,17 +426,17 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-11">0</span>
+              <span id="quantity-11">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
         <div class="card">
           <img onclick="showPoup('Potato')" src="./assets/images/potato.jpeg" alt="Grocery Item">
-          <div class="card-details">
+          <div class="card-details" id="product-12">
             <h4 class="card-title">Potato</h4>
             <span class="card-price">$8.09/lb</span>
             <div>
@@ -358,12 +445,13 @@
             <p class="card-available">
               Many in cart
             </p>
-            <button class="card-add-to-cart">Add to Cart</button>
+            
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-12">0</span>
+              <span id="quantity-12">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
         </div>
       </div>

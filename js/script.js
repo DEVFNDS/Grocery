@@ -39,6 +39,10 @@ function addToCart(event) {
     var __data = parseFloat(itemprice.replace(/[^\d.]/g, ""));
     console.log(__data);
     localStorage.setItem("amount",__data);
+  }else{
+    var __data = localStorage.getItem("amount");
+    var price = parseFloat(itemprice.replace(/[^\d.]/g, ""));
+    localStorage.setItem("amount",parseFloat(__data)+parseFloat(price));
   }
   event.target.style.display = "none";
   event.target.parentElement.querySelector(".quantity span").innerHTML = 1;
