@@ -159,14 +159,18 @@ products.forEach((product) => {
 function addItemData(){
   // looping through the data to add the amount
   const data = document.querySelector(".cart-items");
+  var buttons = data.querySelectorAll("button");
+  console.log("buttons" , buttons);
+  // removing the remove button
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].remove()
+  }
   console.log("data",data);
-  const strdata = data.innerHTML;
+  var strdata = data.innerHTML;
   localStorage.setItem('data', strdata);
   window.location.href = "checkout.html"
   // const amountData = data.cart-items;
-
 }
-
 
 function clearData(){
   localStorage.clear();
