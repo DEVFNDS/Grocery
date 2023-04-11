@@ -48,6 +48,8 @@ function addToCart(event) {
   event.target.parentElement.querySelector(".quantity span").innerHTML = 1;
   event.target.parentElement.querySelector(".quantity").style.display = "block";
   document.getElementById("empty-cart").style.display = "none";
+
+  document.getElementById("count-header").innerHTML = parseInt(document.getElementById("count-header").innerHTML) + 1;
 }
 
 function remove(cartId) {
@@ -59,6 +61,7 @@ function remove(cartId) {
   if(cart.childElementCount === 0) {
     document.getElementById("empty-cart").style.display = "block";
   }
+  document.getElementById("count-header").innerHTML = parseInt(document.getElementById("count-header").innerHTML) - 1;
 }
 
 function toggleSidebar() {
@@ -175,3 +178,27 @@ function addItemData(){
 function clearData(){
   localStorage.clear();
 }
+
+const slide = document.querySelector('.carousel-slide');
+const cards = document.querySelectorAll('.carousel-slide .card');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
+let currentIndex = 0;
+
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  slide.style.transform = `translateX(-${currentIndex * (cards[0].offsetWidth + 40)}px)`;
+  prevBtn.disabled = false;
+  if (currentIndex >= cards.length - 4) {
+    nextBtn.disabled = true;
+  }
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex--;
+  slide.style.transform = `translateX(-${currentIndex * (cards[0].offsetWidth + 20)}px)`;
+  nextBtn.disabled = false;
+  if (currentIndex === 0) {
+    prevBtn.disabled = true;
+  }
+});

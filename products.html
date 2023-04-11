@@ -21,12 +21,13 @@
         <h3>Personal Cart</h3>
         <button onclick="toggleSidebar()">X</button>
       </div>
-      <div class="cart-items">
-
-      </div>
       <div id="empty-cart">
         No items in the cart !!
       </div>
+      <div class="cart-items">
+
+      </div>
+      
       <div class="product-checkout">
         <button onclick="addItemData()" class="card-add-to-cart">Checkout</button>
       </div>
@@ -58,9 +59,10 @@
       </div>
       <h3 class="product-header">Often bought by you</h3>
       <!-- This is product often bought -->
-      <div class="products">
-        <div class="card">
-          <img onclick="showPoup('yogurt')" src="./assets/images/yogurt.PNG" alt="Grocery Item">
+      <div class="carousel-container">
+        <div class="carousel-slide products">
+          <div class="card">
+            <img onclick="showPoup('yogurt')" src="./assets/images/yogurt.PNG" alt="Grocery Item">
           <div class="card-details" id="product-13">
             <h4 class="card-title">Yogurt</h4>
             <span class="card-price">$14.29</span>
@@ -78,12 +80,71 @@
 
             <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
-        </div>
-        <div class="card">
-          <img onclick="showPoup('kiwi')" src="./assets/images/kiwi.jpeg" alt="Grocery Item">
-          <div class="card-details" id="product-14">
-            <h4 class="card-title">Kiwi</h4>
-            <span class="card-price">$11.19</span>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('kiwi')" src="./assets/images/kiwi.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-14">
+              <h4 class="card-title">Kiwi</h4>
+              <span class="card-price">$11.19</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-2">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+  
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('broccoli')" src="./assets/images/broccoli.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-15">
+              <h4 class="card-title">Broccoli</h4>
+              <span class="card-price">$16.19</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-3">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+            
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('PineApple')" src="./assets/images/pineapple.jpeg" alt="Grocery Item">
+            <div class="card-details"  id="product-16">
+              <h4 class="card-title">PineApple</h4>
+              <span class="card-price">$12.49/lb</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-4">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('yogurt')" src="./assets/images/milk.webp" alt="Grocery Item">
+          <div class="card-details" id="product-17">
+            <h4 class="card-title">Milk</h4>
+            <span class="card-price">$5.29</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -92,18 +153,38 @@
             </p>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-2">1</span>
+              <span id="quantity-1">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
 
             <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           </div>
-        </div>
-        <div class="card">
-          <img onclick="showPoup('broccoli')" src="./assets/images/broccoli.jpeg" alt="Grocery Item">
-          <div class="card-details" id="product-15">
-            <h4 class="card-title">Broccoli</h4>
-            <span class="card-price">$16.19</span>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('yogurt')" src="./assets/images/bread.jpeg" alt="Grocery Item">
+            <div class="card-details" id="product-18">
+              <h4 class="card-title">Bread</h4>
+              <span class="card-price">$2.23</span>
+              <div>
+                Buy 1 , get $2 off
+              </div>
+              <p class="card-available">
+                Many in cart
+              </p>
+              <div class="quantity">
+                <button class="card-add-to-cart decrement">-</button>
+                <span id="quantity-1">1</span>
+                <button class="card-add-to-cart increment">+</button>
+              </div>
+  
+              <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="card">
+            <img onclick="showPoup('yogurt')" src="./assets/images/cheese.jpeg" alt="Grocery Item">
+          <div class="card-details" id="product-19">
+            <h4 class="card-title">Cheese</h4>
+            <span class="card-price">$10.29</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -112,33 +193,19 @@
             </p>
             <div class="quantity">
               <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-3">1</span>
+              <span id="quantity-1">1</span>
               <button class="card-add-to-cart increment">+</button>
             </div>
+
+            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
           
-            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
+          </div>
           </div>
         </div>
-        <div class="card">
-          <img onclick="showPoup('PineApple')" src="./assets/images/pineapple.jpeg" alt="Grocery Item">
-          <div class="card-details"  id="product-16">
-            <h4 class="card-title">PineApple</h4>
-            <span class="card-price">$12.49/lb</span>
-            <div>
-              Buy 1 , get $2 off
-            </div>
-            <p class="card-available">
-              Many in cart
-            </p>
-            <div class="quantity">
-              <button class="card-add-to-cart decrement">-</button>
-              <span id="quantity-4">1</span>
-              <button class="card-add-to-cart increment">+</button>
-            </div>
-            <button onclick="addToCart(event)" class="card-add-to-cart add-cart">Add to Cart</button>
-          </div>
-        </div>
+        <button class="carousel-prev"><i class="fa-solid fa-chevron-left fa-beat-fade"></i></button>
+        <button class="carousel-next"><i class="fa-solid fa-chevron-right fa-beat-fade"></i></button>
       </div>
+      
     </div>
   </div>
 
@@ -159,7 +226,7 @@
     </div>
     <div class="navbar-cart">
       <button onclick="showSidebar()"><i class="fas fa-shopping-cart"></i></button>
-      <span class="cart-count">0</span>
+      <span id="count-header" class="cart-count">0</span>
     </div>
   </nav>
   
