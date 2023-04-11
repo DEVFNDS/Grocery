@@ -657,8 +657,10 @@
                               <label
                                 for="card_number_input"
                                 class="right-groc-label"
-                                >Card Number</label
+                                id="card_number_label"
                               >
+                                Card Number
+                              </label>
                               <input
                                 id="card_number_input"
                                 name="card_number"
@@ -670,6 +672,7 @@
                                 class="right-groc-input"
                                 value=""
                               />
+
                               <div
                                 id="error_card_number_input"
                                 class="right-groc-error"
@@ -681,6 +684,8 @@
                               type="submit"
                               hidden=""
                               class="right-groc-button"
+                              id="verify_button"
+                              onclick="validateLogoCardNumber(event)"
                             >
                               Verify
                             </button>

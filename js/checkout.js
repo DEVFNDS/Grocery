@@ -142,7 +142,7 @@ const deliveryOption = document.getElementById("delivery-option");
           checkAllFieldsValid();
           return;
         }
-        const regexMobile = /^(\d{10})$/;
+        const regexMobile = /^(\d{3})-?(\d{3})-?(\d{4})$/;
         if (!regexMobile.test(mobileNumber)) {
           mobileError.innerHTML = "Please enter a valid mobile number.";
           checkAllFieldsValid();
@@ -318,7 +318,7 @@ const deliveryOption = document.getElementById("delivery-option");
           checkAllFieldsValidPickUp();
           return;
         }
-        const regexMobile = /^(\d{10})$/;
+        const regexMobile = /^(\d{3})-?(\d{3})-?(\d{4})$/;
         if (!regexMobile.test(piMoNum)) {
           pickMobError.innerHTML = "Please enter a valid mobile number.";
           checkAllFieldsValidPickUp();
@@ -510,5 +510,26 @@ function toggleGiftMessage() {
     message.style.color="green";
   } else {
     message.style.display = "none";
+  }
+}
+const cardNumberInput = document.getElementById('card_number_input');
+const errorCardNumber = document.getElementById('error_card_number_input');
+const cardNumberLabel = document.getElementById("card_number_label");
+
+cardNumberInput.addEventListener("click", () => {
+
+  cardNumberLabel.classList.add("moved-up");
+  cardNumberInput.type = "number";
+});
+
+function validateLogoCardNumber(event) {
+  event.preventDefault();
+  const cardNumber = cardNumberInput.value;
+  const cardNumberRegex = /^\d{6}$/;
+  if (!cardNumberRegex.test(cardNumber)) {
+    errorCardNumber.innerHTML = 'Card number should have 6 digits.';
+  } else {
+    errorCardNumber.innerHTML = '';
+    
   }
 }
