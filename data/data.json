@@ -2,7 +2,75 @@
     "data":[
         {
             "name":"Sugar Cane",
-            "product_description": "This is the Sugar Cane product description"
-        }
+            "product_description": "Sugarcane is a tall perennial grass that belongs to the genus Saccharum in the Poaceae family. It is one of the world's most important crops, mainly cultivated for the production of sugar and sugarcane-based products such as molasses, rum, and ethanol.",
+            "image": "./assets/images/sugarcane.png",
+            "price":"$3.99/lb"
+        },
+        {
+            "name":"Banana",
+            "product_description" : "Bananas are one of the most popular fruits in the world. They are grown in tropical regions and are available all year round. The banana plant belongs to the Musaceae family, which also includes plantains. Bananas are a rich source of carbohydrates, fiber, and vitamins, and are an important staple food in many countries.",
+            "image" : "./assets/images/banana.jpeg",
+            "price":"$2.19/lb"
+        },
+        {
+            "name":"Watermilon",
+            "product_description" : "Watermelon is a delicious fruit that is known for its juicy, sweet flesh and refreshing taste. It is a member of the Cucurbitaceae family and is believed to have originated in Africa. Today, watermelon is grown in many countries around the world, and is a popular summer fruit due to its high water content and cooling properties.",
+            "image":"./assets/images/watermilon.jpeg",
+            "price":"$8.09/lb"
+        },
+        {
+            "name":"Mandarins",
+            "product_description" : "Mandarins, also known as mandarin oranges or simply tangerines, are a type of citrus fruit that is smaller and sweeter than oranges. They are believed to have originated in Southeast Asia and are now widely grown in many countries around the world, including China, Japan, Spain, and the United States.",
+            "image":"./assets/images/mandarins.jpg",
+            "price":"$12.49/lb"
+        },
+        {
+            "name":"Apples",
+            "product_description" : "Apples are one of the most popular and widely consumed fruits in the world. They belong to the Rosaceae family and are believed to have originated in Central Asia. Today, apples are grown in many countries around the world, with China being the largest producer.",
+            "image":"./assets/images/apples.jpeg",
+            "price":"$11.19/lb"
+         },
+         {
+            "name":"Pear",
+            "product_description" : "Pears are a delicious and nutritious fruit that are enjoyed around the world. They belong to the Rosaceae family, which also includes apples and peaches. Pears are believed to have originated in Europe and Asia, and are now grown in many countries around the world, including the United States, China, and Italy.",
+            "image":"./assets/images/pear.jpeg",
+            "price":"$12.49/lb"
+         },
+         {
+            "name":"Blueberry",
+            "product_description" : "Blueberries are a small, round fruit that are native to North America. They belong to the Vaccinium family, which also includes cranberries and bilberries. Blueberries are commonly found in the wild, but are also cultivated in many countries around the world, including the United States, Canada, and Chile.",
+            "image":"./assets/images/blueberry.jpeg",
+            "price":"$12.49/lb"
+         },
+         {
+            "name":"Orange",
+            "product_description" : "Oranges are one of the most popular citrus fruits in the world. They belong to the Rutaceae family, which also includes lemons, limes, and grapefruits. Oranges are believed to have originated in Southeast Asia and are now grown in many countries around the world, including Brazil, Spain, and the United States.",
+            "image":"./assets/images/orange.jpeg",
+            "price":"$16.19/lb"
+         },
+         {
+            "name":"Spinach",
+            "product_description" : "Spinach is a leafy green vegetable that is packed with nutrients and is enjoyed around the world. It belongs to the Amaranthaceae family and is believed to have originated in Persia. Spinach is now grown in many countries around the world, with China being the largest producer.",
+            "image":"./assets/images/spinach.jpeg",
+            "price":"$6.29/lb"
+         },
+         {
+            "name":"Tomato",
+            "product_description" : "Tomatoes are a popular and versatile fruit that are enjoyed all over the world. They belong to the Solanaceae family, which also includes potatoes, peppers, and eggplants. Tomatoes are believed to have originated in South America and are now grown in many countries around the world, with China being the largest producer.",
+            "image":"./assets/images/tomato.jpeg",
+            "price":"$9.99/lb"
+         },
+         {
+            "name":"Cucumber",
+            "product_description" : "Cucumbers are a refreshing and nutritious vegetable that are enjoyed around the world. They belong to the Cucurbitaceae family, which also includes pumpkins, zucchinis, and melons. Cucumbers are believed to have originated in India and are now grown in many countries around the world, including the United States, China, and Russia.",
+            "image":"./assets/images/cucumber.jpg",
+            "price":"$4.99/lb"
+         },
+         {
+            "name":"Potato",
+            "product_description" : "Potatoes are a staple food that is enjoyed in many different cuisines around the world. They belong to the Solanaceae family, which also includes tomatoes, peppers, and eggplants. Potatoes are believed to have originated in the Andes region of South America and are now grown in many countries around the world, with China being the largest producer.",
+            "image":"./assets/images/potato.jpeg",
+            "price":"$8.09/lb"
+         }
     ]
 }

@@ -37,7 +37,7 @@
       <span class="close">&times;</span>
       <div id="card-des" class="pre-des">
         <div style="width: 33%;">
-          <img src="./assets/images/sugarcane.png" alt="Grocery Item">
+          <img id="#img-des" src="./assets/images/sugarcane.png" alt="Grocery Item">
         </div>
         <div class="des-content">
           <h4>Product Details</h4>
@@ -47,12 +47,12 @@
             
         </div>
         <div class="pre-amount">
-          <p>$8.29</p>
+          <p id="#des-pr">$8.29</p>
           <p>$0.23/oz</p>
           <h4 class="delivery">Free Delivery</h4>
           <h4 class="buy">Buy 1 , get $2 off</h4>
           <h5>Add 1 to qualify for deal(max 99 per order)</h5>
-          <button onclick="addToCart(event)" class="card-add-to-cart">Add to Cart</button>
+          <button onclick="addToCart(event)" class="card-add-to-cart">Save</button>
         </div>
       </div>
     </div>
@@ -151,10 +151,10 @@
           </div>
         </div>
         <div class="card">
-          <img src="./assets/images/banana.jpeg" alt="Grocery Item">
+          <img onclick="showPoup('Banana')" src="./assets/images/banana.jpeg" alt="Grocery Item">
           <div class="card-details" id="product-2">
             <h4 class="card-title">Banana</h4>
-            <span class="card-price">$3.99/lb</span>
+            <span class="card-price">$2.19/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -171,10 +171,10 @@
           </div>
         </div>
         <div class="card">
-          <img src="./assets/images/watermilon.jpeg" alt="Grocery Item">
+          <img onclick="showPoup('Watermilon')" src="./assets/images/watermilon.jpeg" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Watermilon</h4>
-            <span class="card-price">$3.99/lb</span>
+            <span class="card-price">$8.09/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -190,10 +190,10 @@
           </div>
         </div>
         <div class="card">
-          <img src="./assets/images/mandarins.jpg" alt="Grocery Item">
+          <img onclick="showPoup('Mandarins')" src="./assets/images/mandarins.jpg" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Mandarins</h4>
-            <span class="card-price">$3.99/lb</span>
+            <span class="card-price">$12.49/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -212,10 +212,10 @@
       <h3 class="product-header">Fresh Fruits</h3>
       <div class="products">
         <div class="card">
-          <img src="./assets/images/apples.jpeg" alt="Grocery Item">
+          <img onclick="showPoup('Apples')" src="./assets/images/apples.jpeg" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Apples</h4>
-            <span class="card-price">$3.99/lb</span>
+            <span class="card-price">$11.19/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -231,10 +231,10 @@
           </div>
         </div>
         <div class="card">
-          <img src="./assets/images/pear.jpeg" alt="Grocery Item">
+          <img onclick="showPoup('Pear')" src="./assets/images/pear.jpeg" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Pear</h4>
-            <span class="card-price">$3.99/lb</span>
+            <span class="card-price">$12.49/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -250,10 +250,10 @@
           </div>
         </div>
         <div class="card">
-          <img src="./assets/images/blueberry.jpeg" alt="Grocery Item">
+          <img  onclick="showPoup('Blueberry')" src="./assets/images/blueberry.jpeg" alt="Grocery Item">
           <div class="card-details">
-            <h4 class="card-title">Sugar Cane</h4>
-            <span class="card-price">$3.99/lb</span>
+            <h4 class="card-title">Blueberry</h4>
+            <span class="card-price">$12.49/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -269,10 +269,10 @@
           </div>
         </div>
         <div class="card">
-          <img src="./assets/images/orange.jpeg" alt="Grocery Item">
+          <img onclick="showPoup('Orange')"  src="./assets/images/orange.jpeg" alt="Grocery Item">
           <div class="card-details">
-            <h4 class="card-title">Sugar Cane</h4>
-            <span class="card-price">$3.99/lb</span>
+            <h4 class="card-title">Orange</h4>
+            <span class="card-price">$16.19/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -291,10 +291,10 @@
       <h3 class="product-header">Fresh Vegetables</h3>
       <div class="products">
         <div class="card">
-          <img src="./assets/images/spinach.jpeg" alt="Grocery Item">
+          <img  onclick="showPoup('Spinach')" src="./assets/images/spinach.jpeg" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Spinach</h4>
-            <span class="card-price">$3.99/lb</span>
+            <span class="card-price">$6.29/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -310,10 +310,10 @@
           </div>
         </div>
         <div class="card">
-          <img src="./assets/images/tomato.jpeg" alt="Grocery Item">
+          <img  onclick="showPoup('Tomato')" src="./assets/images/tomato.jpeg" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Tomato</h4>
-            <span class="card-price">$3.99/lb</span>
+            <span class="card-price">$9.99/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -329,10 +329,10 @@
           </div>
         </div>
         <div class="card">
-          <img src="./assets/images/cucumber.jpg" alt="Grocery Item">
+          <img onclick="showPoup('Cucumber')" src="./assets/images/cucumber.jpg" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Cucumber</h4>
-            <span class="card-price">$3.99/lb</span>
+            <span class="card-price">$4.99/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>
@@ -348,10 +348,10 @@
           </div>
         </div>
         <div class="card">
-          <img src="./assets/images/potato.jpeg" alt="Grocery Item">
+          <img onclick="showPoup('Potato')" src="./assets/images/potato.jpeg" alt="Grocery Item">
           <div class="card-details">
             <h4 class="card-title">Potato</h4>
-            <span class="card-price">$3.99/lb</span>
+            <span class="card-price">$8.09/lb</span>
             <div>
               Buy 1 , get $2 off
             </div>

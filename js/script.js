@@ -86,6 +86,8 @@ function showPoup(val) {
       console.log(values[i]['name'])
       if(values[i]['name'] == val){
         document.getElementById("#product-des").innerHTML = values[i]['product_description']
+        document.getElementById("#img-des").src = values[i]['image']
+        document.getElementById("#des-pr").innerHTML = values[i]['price']
       }
     }
   })
