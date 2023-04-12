@@ -50,6 +50,8 @@ function addToCart(event) {
   document.getElementById("empty-cart").style.display = "none";
 
   document.getElementById("count-header").innerHTML = parseInt(document.getElementById("count-header").innerHTML) + 1;
+  localStorage.setItem("productCount", document.getElementById("count-header").innerHTML);
+  localStorage.getItem("cartData") ?  localStorage.setItem("cartData", localStorage.getItem("cartData") +  cartItem.outerHTML) :localStorage.setItem("cartData", cartItem.outerHTML);
 }
 
 function remove(cartId) {
@@ -62,6 +64,20 @@ function remove(cartId) {
     document.getElementById("empty-cart").style.display = "block";
   }
   document.getElementById("count-header").innerHTML = parseInt(document.getElementById("count-header").innerHTML) - 1;
+
+  var cartData = localStorage.getItem("cartData");
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = cartData;
+    var products = tempElement.querySelectorAll(".cart-card");
+    cartData = "";
+    products.forEach((item)=> {
+      id = item.id.replace("cart-", "");
+      if(id != productId) {
+        cartData = cartData + item.outerHTML; 
+      }
+    });
+    localStorage.setItem("cartData", cartData);
+    localStorage.setItem("productCount", document.getElementById("count-header").innerHTML);
 }
 
 function toggleSidebar() {
@@ -148,6 +164,21 @@ products.forEach((product) => {
     var productID = e.target.parentElement.parentElement.id;
     document.getElementById("cart-"+ productID).querySelector(".cart-quantity").innerHTML = parseInt(quantityInput.innerHTML) + 1;
     quantityInput.innerHTML = parseInt(quantityInput.innerHTML) + 1;
+    var cartData = localStorage.getItem("cartData");
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = cartData;
+    var products = tempElement.querySelectorAll(".cart-card");
+    cartData = "";
+    products.forEach((item)=> {
+      id = item.id.replace("cart-", "");
+      if(id == productID) {
+        item.querySelector(".cart-quantity").innerHTML = quantityInput.innerHTML;
+      }
+      cartData = cartData + item.outerHTML;
+      console.log(cartData, item);
+    });
+    localStorage.setItem("cartData", cartData);
+
 
     // adding the price 
     var priceStr =  document.getElementById("cart-"+ productID).querySelector(".cart-price").innerHTML
@@ -163,6 +194,20 @@ products.forEach((product) => {
     if (parseInt(quantityInput.innerHTML) > 1) { 
       document.getElementById("cart-"+ productID).querySelector(".cart-quantity").innerHTML = parseInt(quantityInput.innerHTML) - 1;
       quantityInput.innerHTML = parseInt(quantityInput.innerHTML) - 1;
+      var cartData = localStorage.getItem("cartData");
+      const tempElement = document.createElement("div");
+      tempElement.innerHTML = cartData;
+      var products = tempElement.querySelectorAll(".cart-card");
+      cartData = "";
+      products.forEach((item)=> {
+        id = item.id.replace("cart-", "");
+        if(id == productID) {
+          item.querySelector(".cart-quantity").innerHTML = quantityInput.innerHTML;
+        }
+        cartData = cartData + item.outerHTML;
+        console.log(cartData, item);
+      });
+      localStorage.setItem("cartData", cartData);
 
       // subtracting the price 
       var priceStr =  document.getElementById("cart-"+ productID).querySelector(".cart-price").innerHTML
@@ -220,3 +265,24 @@ prevBtn.addEventListener('click', () => {
     prevBtn.disabled = true;
   }
 });
+
+function loadCart() {
+  if(localStorage.getItem("cartData")){
+    var cartData = localStorage.getItem("cartData");
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = cartData;
+    document.getElementById("empty-cart").style.display = "none";
+    document.querySelector(".cart-items").innerHTML = cartData;
+    document.getElementById("count-header").innerHTML = localStorage.getItem("productCount");
+    var products = tempElement.querySelectorAll(".cart-card");
+    products.forEach((item)=> {
+    id = item.id.replace("cart-", "");
+    if(document.getElementById(id)) {
+      document.getElementById(id).querySelector(".add-cart").style.display = "none";
+      document.getElementById(id).querySelector(".quantity span").innerHTML = item.querySelector(".cart-quantity").innerHTML;
+      document.getElementById(id).querySelector(".quantity").style.display = "block";
+    }
+    
+    })
+  }
+}
