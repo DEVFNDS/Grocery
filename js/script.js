@@ -58,8 +58,11 @@ function remove(cartId) {
   var cart = document.querySelector(".cart-items");
   cart.removeChild(document.getElementById(cartId));
   var productId = cartId.replace("cart-", "");
-  document.getElementById(productId).querySelector(".quantity").style.display = "none";
-  document.getElementById(productId).querySelector(".add-cart").style.display = "block";
+  if(document.getElementById(productId)) {
+    document.getElementById(productId).querySelector(".quantity").style.display = "none";
+    document.getElementById(productId).querySelector(".add-cart").style.display = "block";
+  }
+  
   if(cart.childElementCount === 0) {
     document.getElementById("empty-cart").style.display = "block";
   }
