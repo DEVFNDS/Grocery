@@ -110,9 +110,14 @@ function showSidebar() {
 function login(){
   var email = document.getElementById("email").value;
   var pwd = document.getElementById("Password").value;
+  var validemail =  (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email));
   if(email == ""){
     alert("Email Id cannot be empty");
-  }else if(pwd == ""){
+  }
+  else if(!validemail) {
+    alert("Invalid email address");
+  }
+  else if(pwd == ""){
     alert("password cannot be empty");
   }else{
     document.getElementById("user").innerHTML = email;
