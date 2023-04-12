@@ -211,8 +211,8 @@
   </div>
 
   <nav class="navbar">
-    <!-- <img src="./assets/images/logo.png" alt=""> -->
-    <a class="navbar-brand" href="#">Get Delivered</a>
+    <img  class="logo" src="./assets/images/logo.png" alt="">
+    <!--<a class="navbar-brand" href="#">Get Delivered</a> -->
     <div class="navbar-search">
       <input type="text" placeholder="Search for products">
       <button type="submit"><i class="fas fa-search"></i></button>
@@ -224,6 +224,7 @@
     <div class="navbar-login-register">
       <a href="#log-in" class="login-header">Login</a>
       <a href="#register" class="login-header">Register</a>
+      <a href="#" onclick="logout()" class="logout-header" >Logout</a>
     </div>
     <div class="navbar-cart">
       <button onclick="showSidebar()"><i class="fas fa-shopping-cart"></i></button>
@@ -280,6 +281,9 @@
       </div>
 
       <div class="product-container">
+        <div>
+          <span class="user-header">Welcome <span id="user"> User</span></span>
+        </div>
         <h3 class="product-header">Products Near you</h3>
 
         <div class="products">

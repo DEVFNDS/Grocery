@@ -499,6 +499,13 @@ body{
   border-radius: 10px;
 }
 
+.logo {
+  width: 80px;
+}
+.logout-header {
+  display: none;
+}
+
 #card-des div:nth-of-type(1) {flex-grow: 1;}
 #card-des div:nth-of-type(2) {flex-grow: 2;}
 #card-des div:nth-of-type(3) {flex-grow: 4;}

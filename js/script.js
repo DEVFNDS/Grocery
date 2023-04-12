@@ -107,12 +107,18 @@ function login(){
     alert("password cannot be empty");
   }else{
     document.getElementById("user").innerHTML = email;
-    localStorage.setItem("loggedin",0);
+    localStorage.setItem("loggedin",email);
+    window.location.href = "#"
+    document.querySelectorAll(".login-header").forEach((item) => item.style.display = "none");
+    document.querySelector(".logout-header").style.display = "inline";
   }
 }
 
 function logout(){
-  localStorage.setItem("loggedin",-1);
+  localStorage.setItem("loggedin","");
+  document.getElementById("user").innerHTML = "User";
+  document.querySelectorAll(".login-header").forEach((item) => item.style.display = "inline");
+  document.querySelector(".logout-header").style.display = "none";
 }
 
 function showPoup(val) {
@@ -284,5 +290,10 @@ function loadCart() {
     }
     
     })
+  }
+  if(localStorage.getItem("loggedin") !== "") {
+    document.getElementById("user").innerHTML = localStorage.getItem("loggedin");
+    document.querySelectorAll(".login-header").forEach((item) => item.style.display = "none");
+    document.querySelector(".logout-header").style.display = "inline";
   }
 }
