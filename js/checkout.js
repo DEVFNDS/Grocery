@@ -131,9 +131,10 @@ const deliveryOption = document.getElementById("delivery-option");
         }
         checkAllFieldsValid();
       }
+      mobileInput.addEventListener("blur", validateMobileNumber);
 
       function validateMobileNumber() {
-        const mobileNumber = mobileInput.value.trim();
+        const mobileNumber = mobileInput.value.replace(/[^0-9]/g, ''); // Remove all non-digit characters
         const countryCode = countryCodeSelect.value;
         if (!mobileNumber) {
           mobileError.textContent = "Mobile number is required";
@@ -142,15 +143,18 @@ const deliveryOption = document.getElementById("delivery-option");
           checkAllFieldsValid();
           return;
         }
-        const regexMobile = /^(\d{3})-?(\d{3})-?(\d{4})$/;
+        const regexMobile = /^\d{10}$/; // Use a regex to match 10 digits
         if (!regexMobile.test(mobileNumber)) {
-          mobileError.innerHTML = "Please enter a valid mobile number.";
+          mobileError.innerHTML = "Please enter a valid 10-digit mobile number.";
           checkAllFieldsValid();
         } else {
+          const formattedMobile = `(${mobileNumber.substring(0, 3)}) ${mobileNumber.substring(3, 6)}-${mobileNumber.substring(6)}`; // Use substring to format the number
+          mobileInput.value = formattedMobile; // Update the input value with the formatted number
           mobileError.innerHTML = "";
         }
         checkAllFieldsValid();
       }
+      
 
       function validatePostalCode() {
         const postalCodeRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
@@ -308,8 +312,12 @@ const deliveryOption = document.getElementById("delivery-option");
         }
         checkAllFieldsValidPickUp();
       }
+      
+    
+      pickupMob.addEventListener("blur", validatePickMobileNumber);
+      
       function validatePickMobileNumber() {
-        const piMoNum = pickupMob.value.trim();
+        const piMoNum = pickupMob.value.replace(/[^0-9]/g, ''); // Remove all non-digit characters
         const countryCode = countryCodeSelect.value;
         if (!piMoNum) {
           pickMobError.textContent = "Mobile number is required";
@@ -318,15 +326,32 @@ const deliveryOption = document.getElementById("delivery-option");
           checkAllFieldsValidPickUp();
           return;
         }
-        const regexMobile = /^(\d{3})-?(\d{3})-?(\d{4})$/;
+        const regexMobile = /^\d{10}$/; // Use a regex to match 10 digits
         if (!regexMobile.test(piMoNum)) {
-          pickMobError.innerHTML = "Please enter a valid mobile number.";
+          pickMobError.innerHTML = "Please enter a valid 10-digit mobile number.";
           checkAllFieldsValidPickUp();
         } else {
+          const formattedMobile = `(${piMoNum.substring(0, 3)}) ${piMoNum.substring(3, 6)}-${piMoNum.substring(6)}`; // Use substring to format the number
+          pickupMob.value = formattedMobile; // Update the input value with the formatted number
           pickMobError.innerHTML = "";
+          
         }
         checkAllFieldsValidPickUp();
       }
+      
+      
+      
+      
+function clearPickMobileError() {
+  const piMoNum = pickupMob.value.trim();
+  const regexMobile = /^\d{10}$/; // Use a regex to match 10 digits
+  if (regexMobile.test(piMoNum)) {
+    pickMobError.innerHTML = "";
+  }
+}
+
+      
+      
       function checkAllFieldsValidPickUp() {
         const requiredFields = [
           pickupMob,
