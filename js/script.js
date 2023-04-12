@@ -56,6 +56,12 @@ function addToCart(event) {
 
 function remove(cartId) {
   var cart = document.querySelector(".cart-items");
+  // removing the price
+  var priceStr = document.getElementById(cartId).querySelector(".cart-price").innerHTML;
+  var price = parseFloat(priceStr.replace(/[^\d.]/g, ""));
+  var amount = localStorage.getItem("amount");
+  localStorage.setItem("amount",parseFloat(parseFloat(amount) - parseFloat(price)).toFixed(2));
+
   cart.removeChild(document.getElementById(cartId));
   var productId = cartId.replace("cart-", "");
   if(document.getElementById(productId)) {
