@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/checkout.css" />
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="./css/main.css" >
+    <link rel="stylesheet" href="./css/checkout.css" >
     <script
       src="https://kit.fontawesome.com/c940cf0420.js"
       crossorigin="anonymous"
@@ -32,7 +32,7 @@
         <span class="close">&times;</span>
         <div id="card-des" class="pre-des">
           <div style="width: 33%">
-            <img src="./assets/images/sugarcane.png" alt="Grocery Item" />
+            <img src="./assets/images/sugarcane.png" alt="Grocery Item" >
           </div>
           <div class="des-content">
             <h4>Product Details</h4>
@@ -59,7 +59,7 @@
       <img  class="logo" src="./assets/images/logo.png" alt="">
       <!--<a class="navbar-brand" href="#">Get Delivered</a> -->
       <div class="navbar-search">
-        <input type="text" placeholder="Search for products" />
+        <input type="text" placeholder="Search for products" >
         <button type="submit"><i class="fas fa-search"></i></button>
       </div>
       <div class="navbar-delivery">
@@ -96,7 +96,7 @@
                 id="delivery-address"
                 placeholder="Enter your delivery address"
                 required
-              />
+              >
               <span id="delivery-address-error" class="error"></span>
 
               <label for="street-name">Street Name:</label>
@@ -105,7 +105,7 @@
                 id="street-name"
                 placeholder="Enter your street name"
                 required
-              />
+              >
               <span id="street-name-error" class="error"></span>
 
               <label for="postal-code">Postal Code:</label>
@@ -114,7 +114,7 @@
                 id="postal-code"
                 placeholder="Enter your postal code"
                 required
-              />
+              >
               <span id="postal-code-error" class="error"></span>
 
               <label for="country">Country:</label>
@@ -148,7 +148,7 @@
                 id="mobile-number"
                 name="mobile-number"
                 placeholder="Enter your mobile number"
-              />
+              >
             </div>
             <div id="mobile-error" class="error"></div>
           </div>
@@ -171,7 +171,7 @@
                   name="delivery-time-option"
                   value="priority"
                   checked
-                />
+                >
                 Priority Time by <span id="priority-time"></span>
               </label>
               <label>
@@ -179,7 +179,7 @@
                   type="radio"
                   name="delivery-time-option"
                   value="standard"
-                />
+                >
                 Standard Time By <span id="standard-time"></span>
               </label>
               <label>
@@ -187,7 +187,7 @@
                   type="radio"
                   name="delivery-time-option"
                   value="two-hour-window"
-                />
+                >
                 2 Hour Window
               </label>
               <label>
@@ -195,7 +195,7 @@
                   type="radio"
                   name="delivery-time-option"
                   value="three-hour-window"
-                />
+                >
                 3 Hour Window
               </label>
             </div>
@@ -203,7 +203,7 @@
               type="text"
               id="delivery-time"
               placeholder="${priorityTime}"
-            />
+            >
           </div>
           <div class="accordion-header">
             <i class="fas fa-clipboard-list"></i>
@@ -213,11 +213,10 @@
             </div>
           </div>
           <div class="accordion-content">
-            <input
-              type="textarea"
+            <textarea             
               id="delivery-instructions"
               placeholder="Add access code,best entrance etc...."
-            />
+            ></textarea>
           </div>
           <div class="accordion-header">
             <i class="fas fa-money-bill-wave"></i>
@@ -241,7 +240,7 @@
                 name="card-name"
                 placeholder="Enter the name in the card"
                 required
-              />
+              >
               <div id="cardname-error" class="error"></div>
 
               <label for="card-number">Card Number:</label>
@@ -251,7 +250,7 @@
                 name="card-number"
                 placeholder="XXXX XXXX XXXX XXXX"
                 required
-              />
+              >
               <div id="cardnum-error" class="error"></div>
               <label for="card-expiry">Expiry Date (MM/YY):</label>
               <input
@@ -261,7 +260,7 @@
                 placeholder="MM/YY"
                 style="width: 80px"
                 required
-              />
+              >
               <label for="card-cvv">CVV:</label>
               <input
                 type="text"
@@ -270,11 +269,11 @@
                 maxlength="3"
                 style="width: 50px"
                 required
-              />
-              <br /><br />
+              >
+              <br ><br >
               <div id="exp-error" class="error"></div>
               <div id="cvv-error" class="error"></div>
-              <br /><br />
+              <br ><br >
             </form>
           </div>
         </div>
@@ -297,7 +296,7 @@
                     name="pickup-location"
                     value="mississauga"
                     checked
-                  />
+                  >
                   <div class="pickup-details">
                     <div class="pickup-name">Mississauga</div>
                     <div class="pickup-address">
@@ -308,7 +307,7 @@
               </div>
               <div class="pickup-location">
                 <label>
-                  <input type="radio" name="pickup-location" value="niagara" />
+                  <input type="radio" name="pickup-location" value="niagara" >
                   <div class="pickup-details">
                     <div class="pickup-name">Niagara</div>
                     <div class="pickup-address">
@@ -319,7 +318,7 @@
               </div>
               <div class="pickup-location">
                 <label>
-                  <input type="radio" name="pickup-location" value="brampton" />
+                  <input type="radio" name="pickup-location" value="brampton" >
                   <div class="pickup-details">
                     <div class="pickup-name">Brampton</div>
                     <div class="pickup-address">
@@ -347,15 +346,15 @@
                     name="pickup-time"
                     value="10:00am"
                     checked
-                  />
+                  >
                   <span>10:00 AM</span>
                 </label>
                 <label>
-                  <input type="radio" name="pickup-time" value="12:00pm" />
+                  <input type="radio" name="pickup-time" value="12:00pm" >
                   <span>12:00 PM</span>
                 </label>
                 <label>
-                  <input type="radio" name="pickup-time" value="2:00pm" />
+                  <input type="radio" name="pickup-time" value="2:00pm" >
                   <span>2:00 PM</span>
                 </label>
               </div>
@@ -383,7 +382,7 @@
                 name="pickup-mobile-number"
                 placeholder="Enter your mobile number"
                 required
-              />
+              >
             </div>
             <div id="pickup-mobile-error" class="error"></div>
           </div>
@@ -409,7 +408,7 @@
                 name="card-name"
                 placeholder="Enter the name in the card"
                 required
-              />
+              >
               <div id="pick-up-cardname-error" class="error"></div>
 
               <label for="pick-up-card-number">Card Number:</label>
@@ -419,7 +418,7 @@
                 name="card-number"
                 placeholder="XXXX XXXX XXXX XXXX"
                 required
-              />
+              >
               <div id="pick-up-cardnum-error" class="error"></div>
               <label for="pick-up-card-expiry">Expiry Date (MM/YY):</label>
               <input
@@ -429,7 +428,7 @@
                 placeholder="MM/YY"
                 style="width: 80px"
                 required
-              />
+              >
               <label for="pick-up-card-cvv">CVV:</label>
               <input
                 type="text"
@@ -438,11 +437,11 @@
                 maxlength="3"
                 style="width: 50px"
                 required
-              />
-              <br /><br />
+              >
+              <br ><br >
               <div id="pick-up-exp-error" class="error"></div>
               <div id="pick-up-cvv-error" class="error"></div>
-              <br /><br />
+              <br ><br >
             </form>
           </div>
         </div>
@@ -469,7 +468,7 @@
                       id="gift-wrap-checkbox"
                       name="gift-wrap-checkbox"
                       onchange="toggleGiftMessage()"
-                    />
+                    >
                   </div>
                 </div>
                 <div class="groc-bottom-gift-wrap">
@@ -485,7 +484,7 @@
                   class="groc-bottom-gift-btn"
                   data-radium="true"
                 >
-                  <i aria-hidden="true" data-radium="true"></i>
+                 
                 </button>
               </div>
             </div>
@@ -511,7 +510,7 @@
             src="assets/images/ribbon.webp"
             alt=""
             class="right-groc-display"
-          />
+          >
           <div class="right-groc-guar">
             <p class="right-groc-guar1">100% satisfaction guarantee</p>
             <div class="right-groc-guar2">
@@ -535,12 +534,11 @@
           <div class="checkout-cart-items">
             <div class="cart-items"></div>
             <div class="right-groc-items">
-              <dt role="presentation">Item subtotal</dt>
+              <div role="presentation">Item subtotal</div>
               &nbsp;
               <div class="right-groc-items1">
-                <dd id="cost" role="presentation" classs="right-groc-items2">
-                  $32.91
-                </dd>
+                <div id="cost" role="presentation" class="right-groc-items2">
+                </div>
               </div>
             </div>
           </div>
@@ -549,7 +547,7 @@
               <div class="right-groc-item">
                 <div class="right-groc-info">
                   <div class="right-groc-flex right-groc-service">
-                    <dt role="presentation">Service fee</dt>
+                    <div role="presentation">Service fee</div>
                     &nbsp;
                     <button
                       class="right-groc-btn"
@@ -561,12 +559,12 @@
                     <div
                       class="right-groc-grow right-groc-end right-groc-order-3 right-groc-margin-bottom-0"
                     >
-                      <dd
+                      <div
                         role="presentation"
                         class="right-groc-margin-bottom-0"
                       >
                         $5.00
-                      </dd>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -574,15 +572,15 @@
             </div>
 
             <div data-radium="true">
-              <hr />
+              <hr>
 
               <div class="right-groc-bold">
                 <div>
                   <div class="right-groc-subtotal">
-                    <dt role="presentation">Subtotal</dt>
+                    <div role="presentation">Subtotal</div>
                     &nbsp;
                     <div class="right-groc-subtotal-value">
-                      <dd id="final-price" role="presentation">$37.91</dd>
+                      <div id="final-price" role="presentation"></div>
                     </div>
                   </div>
                 </div>
@@ -594,7 +592,7 @@
                 <div class="right-groc-payments">
                   <span>
                     <span class="right-groc-normal-text"
-                      >Pay in 4 installments of $ <span id="#inst">9.48</span> with</span
+                      >Pay in 4 installments of $ <span id="#inst"></span> with</span
                     >
                     <span class="right-groc-bold">GDeliver</span>
                     <span class="right-groc-normal-text">.</span>
@@ -616,7 +614,7 @@
               </div>
 
               <div>
-                <hr />
+                <hr >
               </div>
 
               <div class="right-groc-container">
@@ -644,7 +642,7 @@
                       <img
                         src="assets/images/logo_check.png"
                         alt="Coming Soon"
-                      />
+                      >
                       <div style="flex: 1 1 auto">
                         <form>
                           <div class="right-groc-form">
@@ -666,7 +664,7 @@
                                 placeholder=""
                                 class="right-groc-input"
                                 value=""
-                              />
+                              >
 
                               <div
                                 id="error_card_number_input"

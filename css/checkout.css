@@ -12,6 +12,12 @@
     position: relative;
     scroll-margin-top: 57px;
   }
+  #delivery-instructions{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
   
   .groc-bottom-gift-icon {
     position: absolute;
@@ -420,7 +426,7 @@
 
   /*dfjd*/
   .right-panel-groc {
-    margin-right: 170px;
+    
     width: 318px;
   }
   .right-groc-badge {
