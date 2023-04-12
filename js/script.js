@@ -117,7 +117,7 @@ function login(){
   }else{
     document.getElementById("user").innerHTML = email;
     localStorage.setItem("loggedin",email);
-    window.location.href = "#"
+    window.location.href = "#";
     document.querySelectorAll(".login-header").forEach((item) => item.style.display = "none");
     document.querySelector(".logout-header").style.display = "inline";
   }

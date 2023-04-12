@@ -58,5 +58,6 @@ function validateForm(){
 
     if(failed == false){
         alert("successfully registered user");
+        window.location.href = "#";
     }
 }
