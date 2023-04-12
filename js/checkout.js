@@ -515,6 +515,7 @@ function getData(){
   // setting up the cost data
   document.getElementById('cost').innerHTML = localStorage.getItem("amount");
   document.getElementById('final-price').innerHTML = parseFloat(parseFloat(localStorage.getItem("amount")) + 5).toFixed(2) ;
+  document.getElementById('#inst').innerHTML = parseFloat(parseFloat(localStorage.getItem("amount")) + 5).toFixed(2) ;
 
   var cartBottom=document.querySelector(".cart-items-bottom");
 

@@ -50,18 +50,37 @@ function addToCart(event) {
   document.getElementById("empty-cart").style.display = "none";
 
   document.getElementById("count-header").innerHTML = parseInt(document.getElementById("count-header").innerHTML) + 1;
+  localStorage.setItem("productCount", document.getElementById("count-header").innerHTML);
+  localStorage.getItem("cartData") ?  localStorage.setItem("cartData", localStorage.getItem("cartData") +  cartItem.outerHTML) :localStorage.setItem("cartData", cartItem.outerHTML);
 }
 
 function remove(cartId) {
   var cart = document.querySelector(".cart-items");
   cart.removeChild(document.getElementById(cartId));
   var productId = cartId.replace("cart-", "");
-  document.getElementById(productId).querySelector(".quantity").style.display = "none";
-  document.getElementById(productId).querySelector(".add-cart").style.display = "block";
+  if(document.getElementById(productId)) {
+    document.getElementById(productId).querySelector(".quantity").style.display = "none";
+    document.getElementById(productId).querySelector(".add-cart").style.display = "block";
+  }
+  
   if(cart.childElementCount === 0) {
     document.getElementById("empty-cart").style.display = "block";
   }
   document.getElementById("count-header").innerHTML = parseInt(document.getElementById("count-header").innerHTML) - 1;
+
+  var cartData = localStorage.getItem("cartData");
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = cartData;
+    var products = tempElement.querySelectorAll(".cart-card");
+    cartData = "";
+    products.forEach((item)=> {
+      id = item.id.replace("cart-", "");
+      if(id != productId) {
+        cartData = cartData + item.outerHTML; 
+      }
+    });
+    localStorage.setItem("cartData", cartData);
+    localStorage.setItem("productCount", document.getElementById("count-header").innerHTML);
 }
 
 function toggleSidebar() {
@@ -79,6 +98,30 @@ function showSidebar() {
   }
   document.getElementById("side").classList.toggle("active");
   document.querySelector(".main-content").style.pointerEvents = "none";
+}
+
+
+function login(){
+  var email = document.getElementById("email").value;
+  var pwd = document.getElementById("Password").value;
+  if(email == ""){
+    alert("Email Id cannot be empty");
+  }else if(pwd == ""){
+    alert("password cannot be empty");
+  }else{
+    document.getElementById("user").innerHTML = email;
+    localStorage.setItem("loggedin",email);
+    window.location.href = "#"
+    document.querySelectorAll(".login-header").forEach((item) => item.style.display = "none");
+    document.querySelector(".logout-header").style.display = "inline";
+  }
+}
+
+function logout(){
+  localStorage.setItem("loggedin","");
+  document.getElementById("user").innerHTML = "User";
+  document.querySelectorAll(".login-header").forEach((item) => item.style.display = "inline");
+  document.querySelector(".logout-header").style.display = "none";
 }
 
 function showPoup(val) {
@@ -130,6 +173,21 @@ products.forEach((product) => {
     var productID = e.target.parentElement.parentElement.id;
     document.getElementById("cart-"+ productID).querySelector(".cart-quantity").innerHTML = parseInt(quantityInput.innerHTML) + 1;
     quantityInput.innerHTML = parseInt(quantityInput.innerHTML) + 1;
+    var cartData = localStorage.getItem("cartData");
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = cartData;
+    var products = tempElement.querySelectorAll(".cart-card");
+    cartData = "";
+    products.forEach((item)=> {
+      id = item.id.replace("cart-", "");
+      if(id == productID) {
+        item.querySelector(".cart-quantity").innerHTML = quantityInput.innerHTML;
+      }
+      cartData = cartData + item.outerHTML;
+      console.log(cartData, item);
+    });
+    localStorage.setItem("cartData", cartData);
+
 
     // adding the price 
     var priceStr =  document.getElementById("cart-"+ productID).querySelector(".cart-price").innerHTML
@@ -145,6 +203,20 @@ products.forEach((product) => {
     if (parseInt(quantityInput.innerHTML) > 1) { 
       document.getElementById("cart-"+ productID).querySelector(".cart-quantity").innerHTML = parseInt(quantityInput.innerHTML) - 1;
       quantityInput.innerHTML = parseInt(quantityInput.innerHTML) - 1;
+      var cartData = localStorage.getItem("cartData");
+      const tempElement = document.createElement("div");
+      tempElement.innerHTML = cartData;
+      var products = tempElement.querySelectorAll(".cart-card");
+      cartData = "";
+      products.forEach((item)=> {
+        id = item.id.replace("cart-", "");
+        if(id == productID) {
+          item.querySelector(".cart-quantity").innerHTML = quantityInput.innerHTML;
+        }
+        cartData = cartData + item.outerHTML;
+        console.log(cartData, item);
+      });
+      localStorage.setItem("cartData", cartData);
 
       // subtracting the price 
       var priceStr =  document.getElementById("cart-"+ productID).querySelector(".cart-price").innerHTML
@@ -202,3 +274,29 @@ prevBtn.addEventListener('click', () => {
     prevBtn.disabled = true;
   }
 });
+
+function loadCart() {
+  if(localStorage.getItem("cartData")){
+    var cartData = localStorage.getItem("cartData");
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = cartData;
+    document.getElementById("empty-cart").style.display = "none";
+    document.querySelector(".cart-items").innerHTML = cartData;
+    document.getElementById("count-header").innerHTML = localStorage.getItem("productCount");
+    var products = tempElement.querySelectorAll(".cart-card");
+    products.forEach((item)=> {
+    id = item.id.replace("cart-", "");
+    if(document.getElementById(id)) {
+      document.getElementById(id).querySelector(".add-cart").style.display = "none";
+      document.getElementById(id).querySelector(".quantity span").innerHTML = item.querySelector(".cart-quantity").innerHTML;
+      document.getElementById(id).querySelector(".quantity").style.display = "block";
+    }
+    
+    })
+  }
+  if(localStorage.getItem("loggedin") !== "") {
+    document.getElementById("user").innerHTML = localStorage.getItem("loggedin");
+    document.querySelectorAll(".login-header").forEach((item) => item.style.display = "none");
+    document.querySelector(".logout-header").style.display = "inline";
+  }
+}

@@ -399,6 +399,10 @@ body{
   font-size: 20px;
 }
 
+.user-header{
+  font-family: monospace;
+  font-size: 20px;
+}
 
 .navbar-login-register a{
   padding: 9px 13px;
@@ -493,6 +497,13 @@ body{
 .cart-items::-webkit-scrollbar-thumb {
   background: teal;
   border-radius: 10px;
+}
+
+.logo {
+  width: 80px;
+}
+.logout-header {
+  display: none;
 }
 
 #card-des div:nth-of-type(1) {flex-grow: 1;}
