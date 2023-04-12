@@ -81,6 +81,24 @@ function showSidebar() {
   document.querySelector(".main-content").style.pointerEvents = "none";
 }
 
+
+function login(){
+  var email = document.getElementById("email").value;
+  var pwd = document.getElementById("Password").value;
+  if(email == ""){
+    alert("Email Id cannot be empty");
+  }else if(pwd == ""){
+    alert("password cannot be empty");
+  }else{
+    document.getElementById("user").innerHTML = email;
+    localStorage.setItem("loggedin",0);
+  }
+}
+
+function logout(){
+  localStorage.setItem("loggedin",-1);
+}
+
 function showPoup(val) {
   
   // data fetch functinality to fetch data from json
